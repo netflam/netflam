@@ -1,0 +1,22 @@
+<div class="auth">
+    <div class="grid">
+        <a href="/">
+            <img src="/assets/images/shortcuts/16.png" alt="netflam">
+        </a>
+    <% unless @errors.nil? || @errors == 0 %>
+        <div class="box red">
+        <% @errors.each_pair do |key, value| %>
+            <p><%= key.capitalize %> <%= value[0] %>.</p>
+        <% end %>
+        </div>
+    <% end %>
+        <form class="box" accept-charset="UTF-8" action="/a/join" method="POST">
+            <input type="text" name="realname" placeholder="Realname" /><br>
+            <input type="text" name="username" placeholder="Username" /><br>
+            <input type="email" name="email" placeholder="Email" /><br>
+            <input type="password" name="password" placeholder="Password" /><br>
+            <button class="button green">Join</button>
+        </form>
+        <h3>Have a account? <a href="/a/login">Login now</a></h3>
+    </div>
+</div>

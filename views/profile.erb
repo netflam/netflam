@@ -1,0 +1,24 @@
+<%= partial 'partials/masthead' %>
+
+<div class="grid">
+    <div>
+        <div class="col-8">
+            <h2><b><%= @user.realname %></b> (<%= @user.username %>)</h2>
+        <% unless @user.bio.nil? || @user.bio == 0 %>
+            <%= Netflam::Markdown.render(@user.bio) %>
+        <% else %>
+            <i>null</i>
+        <% end %>
+        </div>
+        <div class="col-4">
+            <a href="/u/<%= @user.username %>">
+                <img class="right" src="https://secure.gravatar.com/avatar/<%= Digest::MD5.hexdigest(@user.email) %>?s=128&amp;d=identicon" alt="<%= @user.username %>" />
+            </a>
+        </div>
+    </div>
+    <hr>
+
+    <%= partial 'partials/stories' %>
+</div>
+
+<%= partial 'partials/footer' %>

@@ -1,0 +1,22 @@
+<%= partial 'partials/masthead' %>
+
+<div class="grid">
+    <h1>Post a story</h1>
+    <p>Submit a link or provide a comment to start a discussion. We'll warn you if it has been posted before.</p>
+<% unless @errors.nil? || @errors == 0 %>
+    <div class="box red">
+    <% @errors.each_pair do |key, value| %>
+        <p><%= key.capitalize %> <%= value[0] %>.</p>
+    <% end %>
+    </div>
+<% end %>
+    <form accept-charset="UTF-8" action="/s/new" method="POST">
+        <input type="text" name="url" placeholder="Url (optional)" /><br>
+        <input type="text" name="description" placeholder="Description" /><br>
+        <textarea name="extended" placeholder="Extended (markdown: on)"></textarea>
+        <input type="text" name="tags" value="web">
+        <button class="button">New</button>
+    </form>
+</div>
+
+<%= partial 'partials/footer' %>

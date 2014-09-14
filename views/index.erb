@@ -1,0 +1,21 @@
+<% if session[:auth] %>
+    <%= partial 'partials/masthead' %>
+<% else %>
+    <div class="welcome grid">
+        <div class="col-8">
+            <img src="/assets/images/shortcuts/16.png" />
+            <h1>netflam, your hackerspace</h1>
+            <p>A community where people can discuss, share interesting links, questions and timely events.</p>
+            <a href="/a/join" class="button giant green">Join</a>
+            <a href="/a/login" class="button giant">Login</a>
+        </div>
+    </div>
+
+    <hr>
+<% end %>
+
+<div class="grid">
+    <%= partial 'partials/stories' %>
+</div>
+
+<%= partial 'partials/footer' %>

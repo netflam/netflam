@@ -1,0 +1,6 @@
+log/*.log
+tmp/dbs/*.db
+tmp/pids/*.pid
+tmp/sockets/*.sock
+
+Gemfile.lock

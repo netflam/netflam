@@ -1,0 +1,48 @@
+<ol class="stories">
+<% for story in @stories %>
+    <li data-id="<%= story.id.to_s(32) %>">
+        <div class="meter col-1">
+            <div class="up <%= 'active' if Vote.exists?(:user_id => session[:user].id, :story_id => story.id) if session[:auth] %>"></div>
+            <div class="score <%= Meter.type(story.id) %>"><%= Meter.score(story.id) %></div>
+        </div>
+        <div class="details col-10">
+            <span class="link">
+            <% unless story.url.nil? || story.url == '' %>
+                <a href="<%= story.url %>"><%= story.description %></a>
+            <% else %>
+                <a href="/s/<%= story.id.to_s(32) %>/<%= story.description.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>"><%= story.description %></a>
+            <% end %>
+            </span>
+            <span class="tags">
+            <% for tag in story.tags %>
+                <a href="/t/<%= tag.name %>" class="tag" id="<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>
+            <% end %>
+            </span>
+            <span class="domain"><%= URI(story.url).host %></span>
+            <div>
+                <a href="/s/<%= story.id.to_s(32) %>/<%= story.description.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>"><%= Meter.score(story.id) %> points and 0 comments</a>
+                •
+                <label title="<%= story.created_at %>"><%= Netflam::Functions.ago(story.created_at.to_i) %></label>
+                by
+                <a href="/u/<%= story.user.username %>"><%= story.user.username %></a>
+            <% if session[:user] == story.user %>
+                •
+                <a href="/s/<%= story.id.to_s(32) %>/edit" class="edit">edit</a>
+                •
+                <a href="#story" class="destroy">destroy</a>
+            <% end %>
+            </div>
+        </div>
+        <div class="author col-1">
+            <a href="/u/<%= story.user.username %>">
+                <img src="https://secure.gravatar.com/avatar/<%= Digest::MD5.hexdigest(story.user.email) %>?s=36&amp;d=identicon" alt="<%= story.user.username %>" />
+            </a>
+        </div>
+    </li>
+<% end %>
+<% if @stories.nil? || @stories.count == 0  %>
+    <div class="box">
+        Nothing to show!
+    </div>
+<% end %>
+</ol>

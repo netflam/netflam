@@ -1,0 +1,27 @@
+<nav class="masthead inline grid">
+    <div class="col-1">
+        <a href="/"><img class="left" src="/assets/images/shortcuts/16.png" alt="netflam" /></a>
+        <div class="led inline"></div>
+    </div>
+    <div class="col-6">
+        <ul class="inline left">
+            <li><a href="/">Home</a></li>
+            <li><a href="/recent">Recent</a></li>
+            <li><a href="/comments">Comments</a></li>
+            <li><a href="/search">Search</a></li>
+        </ul>
+    </div>
+    <div class="col-5">
+        <ul class="inline right">
+        <% if session[:auth] %>
+            <li><a href="/u/<%= session[:user].username %>"><b><%= session[:user].username %> (<%= Meter.karma(session[:user].id).to_i %>)</b></a></li>
+            <li><a href="/s/new">New</a></li>
+            <li><a href="/u/<%= session[:user].username %>/settings">Settings</a></li>
+            <li><a href="/a/logout">Logout</a></li>
+        <% else %>
+            <li><a href="/a/join">Join</a></li>
+            <li><a href="/a/login">Login</a></li>
+        <% end %>
+        </ul>
+    </div>
+</nav>

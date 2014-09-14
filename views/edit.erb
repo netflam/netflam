@@ -1,0 +1,22 @@
+<%= partial 'partials/masthead' %>
+
+<div class="grid">
+    <h1>Edit a story</h1>
+    <p>Remember that the changes were not too big. For large changes better idea is to write a new one.</p>
+<% unless @errors.nil? || @errors == 0 %>
+    <div class="box red">
+    <% @errors.each_pair do |key, value| %>
+        <p><%= key.capitalize %> <%= value[0] %>.</p>
+    <% end %>
+    </div>
+<% end %>
+    <form accept-charset="UTF-8" action="/s/<%= @story.id.to_s(32) %>/edit" method="POST">
+        <input type="text" name="url" placeholder="Url (optional)" value="<%= @story.url %>" /><br>
+        <input type="text" name="description" placeholder="Description" value="<%= @story.description %>" /><br>
+        <textarea name="extended" placeholder="Extended (markdown: on)"><%= @story.extended %></textarea>
+        <input type="text" name="tags" value="<%= @story.tags.map(&:name).join(",") %>">
+        <button class="button">Edit</button>
+    </form>
+</div>
+
+<%= partial 'partials/footer' %>

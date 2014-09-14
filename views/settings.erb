@@ -1,0 +1,22 @@
+<%= partial 'partials/masthead' %>
+
+<div class="grid">
+    <h1>Update your profile</h1>
+    <p>Feel free. Use markdown to describe yourself. Try to provide true information.</p>
+<% unless @errors.nil? || @errors == 0 %>
+    <div class="box red">
+    <% @errors.each_pair do |key, value| %>
+        <p><%= key.capitalize %> <%= value[0] %>.</p>
+    <% end %>
+    </div>
+<% end %>
+    <form accept-charset="UTF-8" action="/u/<%= session[:user].username %>/settings" method="POST">
+        <input type="text" name="realname" placeholder="Realname" value="<%= session[:user].realname %>" /><br>
+        <input type="text" name="username" placeholder="Username" value="<%= session[:user].username %>" /><br>
+        <input type="email" name="email" placeholder="Email" value="<%= session[:user].email %>" /><br>
+        <textarea name="bio" placeholder="Bio (markdown: on)"><%= session[:user].bio %></textarea>
+        <button class="button">Save</button>
+    </form>
+</div>
+
+<%= partial 'partials/footer' %>
