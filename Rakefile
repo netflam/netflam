@@ -53,7 +53,7 @@ task :clean do
 end
 
 # UPDATE - update project from official repository
-task :clean do
+task :update do
   # Github
   %x(git clone git@github.com:netflam/netflam.git .)
 
