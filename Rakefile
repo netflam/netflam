@@ -51,3 +51,11 @@ task :clean do
 
   puts "netflam logger files removed..."
 end
+
+# UPDATE - update project from official repository
+task :clean do
+  # Github
+  %x(git clone git@github.com:netflam/netflam.git .)
+
+  puts "netflam updated..."
+end
