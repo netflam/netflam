@@ -106,7 +106,7 @@ $ sudo rake update
 
 Please feel free to contribute to this project! Pull requests and feature requests welcome! :v:
 
-_IRC chatroom, __#netflam__ on freenode.net_
+_IRC chatroom, **#netflam** on freenode.net_
 
 ## License
 
