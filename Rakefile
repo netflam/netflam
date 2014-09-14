@@ -55,7 +55,9 @@ end
 # UPDATE - update project from official repository
 task :update do
   # Github
-  %x(git clone git@github.com:netflam/netflam.git .)
+  %x(git clone git@github.com:netflam/netflam.git .cache)
+  %x(mv .cache .)
+  %x(rm -rf .cache)
 
   puts "netflam updated..."
 end
