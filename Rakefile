@@ -57,7 +57,7 @@ task :update do
   # Github
   %x(curl -L -o .cache http://github.com/netflam/netflam/archive/master.zip)
   %x(unzip .cache)
-  %x(mv netflam-master/* .)
+  %x(cp -r netflam-master/* .)
   %x(rm -rf .cache netflam-master)
 
   puts "netflam updated..."
