@@ -22,6 +22,7 @@
 - [Installation](#installation): Step-by-step instructions for getting netflam running on your computer.
 - [Usage](#usage): List of commands.
 - [Dependencies](#dependencies): List of used dependencies.
+- [Conceptions](#conceptions): List of ideas, to-do and tasks.
 - [Contributing](#contributing): Explanation of how you can join the project.
 - [License](#license): Clarification of certain rules.
 
@@ -98,6 +99,23 @@ $ sudo rake update
 - Nginx
 - Sqlite3
 - Redis
+
+## Conceptions
+
+- [ ] sync stories with **dropbox**
+- [ ] search engine
+- [ ] comments
+- [ ] pagination
+- [ ] about page
+- [ ] join using **twitter** or **github**
+- [ ] discussion/read story
+- [x] user settings @MaciejCzyzewski
+- [x] user profile @MaciejCzyzewski
+- [x] meter using redis @MaciejCzyzewski
+- [x] join and login @MaciejCzyzewski
+- [x] handling story (new, edit, destroy) @MaciejCzyzewski
+- [x] popular and recent stories @MaciejCzyzewski
+- [x] terms and privacy @MaciejCzyzewski
 
 ## Contributing
 
