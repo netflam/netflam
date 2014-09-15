@@ -16,14 +16,6 @@
   <img src="https://dl.dropboxusercontent.com/u/103345209/Screenshots/Screenshot%202014-09-14%2018.22.57.png"/>
 </div>
 
-<div align="center">
-  <img src="https://dl.dropboxusercontent.com/u/103345209/Screenshots/Screenshot%202014-09-14%2018.23.44.png"/>
-</div>
-
-<div align="center">
-  <img src="https://dl.dropboxusercontent.com/u/103345209/Screenshots/Screenshot%202014-09-14%2018.23.58.png"/>
-</div>
-
 #### More reading:
 
 - [Installation](#installation): Step-by-step instructions for getting netflam running on your computer.
