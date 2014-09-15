@@ -103,8 +103,10 @@ $ sudo rake update
 ## Conceptions
 
 - [ ] sync stories with **dropbox**
+- [ ] API
 - [ ] search engine
 - [ ] comments
+- [ ] tags
 - [ ] pagination
 - [ ] about page
 - [ ] join using **twitter** or **github**
