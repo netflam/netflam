@@ -92,6 +92,7 @@ $ sudo rake update
   * rake
   * unicorn
   * activerecord
+  * redis
   * rack-protection
   * tilt
   * redcarpet
@@ -101,6 +102,7 @@ $ sudo rake update
   * selectize.js
 - Nginx
 - Sqlite3
+- Redis
 
 ## Contributing
 
