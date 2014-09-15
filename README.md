@@ -109,13 +109,13 @@ $ sudo rake update
 - [ ] about page
 - [ ] join using **twitter** or **github**
 - [ ] discussion/read story
-- [x] user settings @MaciejCzyzewski
-- [x] user profile @MaciejCzyzewski
-- [x] meter using redis @MaciejCzyzewski
-- [x] join and login @MaciejCzyzewski
-- [x] handling story (new, edit, destroy) @MaciejCzyzewski
-- [x] popular and recent stories @MaciejCzyzewski
-- [x] terms and privacy @MaciejCzyzewski
+- [x] user settings
+- [x] user profile
+- [x] meter using redis
+- [x] join and login
+- [x] handling story (new, edit, destroy)
+- [x] popular and recent stories
+- [x] terms and privacy
 
 ## Contributing
 
