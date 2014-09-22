@@ -107,6 +107,7 @@ $ sudo rake update
 
 - [ ] sync stories with **dropbox**
 - [ ] API
+- [ ] chrome/web widget (comments)
 - [ ] search engine
 - [ ] comments
 - [ ] tags
