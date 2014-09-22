@@ -1,7 +1,5 @@
 <p align="center">
-  <a href="https://github.com/netflam/netflam">
-    <img src="https://raw.githubusercontent.com/netflam/netflam/master/public/assets/images/shortcuts/16.png" alt="netflam" />
-  </a>
+  <img src="https://raw.githubusercontent.com/netflam/netflam/master/public/assets/images/shortcuts/16.png" alt="netflam" />
   <br />
   Netflam, your Hackerspace. <br /> Is's a community where people can discuss, share interesting links, questions and timely events.
   <br /><br />

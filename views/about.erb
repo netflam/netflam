@@ -1,8 +1,10 @@
 <%= partial 'partials/masthead' %>
 
-<div class="grid">
-    not ready, sorry! (read README.md)
+<div class="grid md">
+    README.md
     <a class="right" href="https://github.com/netflam/netflam">https://github.com/netflam/netflam</a>
+
+    <%= require 'open-uri'; Netflam::Markdown.render(open('https://raw.githubusercontent.com/netflam/netflam/master/README.md') {|f| f.read })  %>
 </div>
 
 <%= partial 'partials/footer' %>
