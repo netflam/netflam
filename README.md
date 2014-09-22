@@ -110,8 +110,9 @@ $ sudo rake update
 - [ ] comments
 - [ ] tags
 - [ ] pagination
-- [ ] about page
 - [ ] join using **twitter** or **github**
+- [ ] help
+- [x] about page
 - [x] markdown with redcarpet and pygments
 - [x] discussion/read story
 - [x] user settings
