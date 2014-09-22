@@ -491,9 +491,6 @@ hr {
 .box.green { border-color: #2ecc71; }
 .box.red   { border-color: #e74c3c; }
 
-.listy { display: list-item; list-style-type: square; }
-.listy li { margin: 10px 0; overflow: visible; }
-
 h1:first-child, h2:first-child, h3:first-child,
 h4:first-child, h5:first-child, h6:first-child {
   margin-top: 0px;
@@ -730,7 +727,6 @@ ol.stories {
 }
 
 .stories li {
-  height: 36px;
   margin-bottom: 14px;
 }
 
@@ -794,6 +790,11 @@ ol.stories {
   float: right;
 }
 
+.stories .details .extended {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .stories .details .edit    { color: #f1c40f; }
 .stories .details .destroy { color: #e74c3c; }
 
@@ -836,6 +837,131 @@ ol.stories {
   background-repeat: no-repeat;
   background-position: 3px 4px;
   padding-left: 15px;
+}
+
+/* Highlight
+   ========================================================================= */
+
+.hl        { background: #ecf0f1;
+             padding: 0em 1em;
+             margin: 1em 0em; }
+.hl .c     { color: #999988;
+             font-style: italic }             /* Comment */
+.hl .err   { color: #a61717;
+             background-color: #e3d2d2 }      /* Error */
+.hl .k     { font-weight: bold }              /* Keyword */
+.hl .o     { font-weight: bold }              /* Operator */
+.hl .cm    { color: #999988;
+             font-style: italic }             /* Comment.Multiline */
+.hl .cp    { color: #999999;
+             font-weight: bold }              /* Comment.Preproc */
+.hl .c1    { color: #999988;
+             font-style: italic }             /* Comment.Single */
+.hl .cs    { color: #999999;
+            font-weight: bold;
+             font-style: italic }             /* Comment.Special */
+.hl .gd    { color: #000000;
+             background-color: #ffdddd }      /* Generic.Deleted */
+.hl .gd .x { color: #000000;
+             background-color: #ffaaaa }      /* Generic.Deleted.Specific */
+.hl .ge    { font-style: italic }             /* Generic.Emph */
+.hl .gr    { color: #aa0000 }                 /* Generic.Error */
+.hl .gh    { color: #999999 }                 /* Generic.Heading */
+.hl .gi    { color: #000000;
+             background-color: #ddffdd }      /* Generic.Inserted */
+.hl .gi .x { color: #000000;
+             background-color: #aaffaa }      /* Generic.Inserted.Specific */
+.hl .go    { color: #888888 }                 /* Generic.Output */
+.hl .gp    { color: #555555 }                 /* Generic.Prompt */
+.hl .gs    { font-weight: bold }              /* Generic.Strong */
+.hl .gu    { color: #aaaaaa }                 /* Generic.Subheading */
+.hl .gt    { color: #aa0000 }                 /* Generic.Traceback */
+.hl .kc    { font-weight: bold }              /* Keyword.Constant */
+.hl .kd    { font-weight: bold }              /* Keyword.Declaration */
+.hl .kp    { font-weight: bold }              /* Keyword.Pseudo */
+.hl .kr    { font-weight: bold }              /* Keyword.Reserved */
+.hl .kt    { color: #445588;
+             font-weight: bold }              /* Keyword.Type */
+.hl .m     { color: #009999 }                 /* Literal.Number */
+.hl .s     { color: #d14 }                    /* Literal.String */
+.hl .na    { color: #008080 }                 /* Name.Attribute */
+.hl .nb    { color: #0086B3 }                 /* Name.Builtin */
+.hl .nc    { color: #445588;
+             font-weight: bold }              /* Name.Class */
+.hl .no    { color: #008080 }                 /* Name.Constant */
+.hl .ni    { color: #800080 }                 /* Name.Entity */
+.hl .ne    { color: #990000;
+             font-weight: bold }              /* Name.Exception */
+.hl .nf    { color: #990000;
+             font-weight: bold }              /* Name.Function */
+.hl .nn    { color: #555555 }                 /* Name.Namespace */
+.hl .nt    { color: #000080 }                 /* Name.Tag */
+.hl .nv    { color: #008080 }                 /* Name.Variable */
+.hl .ow    { font-weight: bold }              /* Operator.Word */
+.hl .w     { color: #bbbbbb }                 /* Text.Whitespace */
+.hl .mf    { color: #009999 }                 /* Literal.Number.Float */
+.hl .mh    { color: #009999 }                 /* Literal.Number.Hex */
+.hl .mi    { color: #009999 }                 /* Literal.Number.Integer */
+.hl .mo    { color: #009999 }                 /* Literal.Number.Oct */
+.hl .sb    { color: #d14 }                    /* Literal.String.Backtick */
+.hl .sc    { color: #d14 }                    /* Literal.String.Char */
+.hl .sd    { color: #d14 }                    /* Literal.String.Doc */
+.hl .s2    { color: #d14 }                    /* Literal.String.Double */
+.hl .se    { color: #d14 }                    /* Literal.String.Escape */
+.hl .sh    { color: #d14 }                    /* Literal.String.Heredoc */
+.hl .si    { color: #d14 }                    /* Literal.String.Interpol */
+.hl .sx    { color: #d14 }                    /* Literal.String.Other */
+.hl .sr    { color: #009926 }                 /* Literal.String.Regex */
+.hl .s1    { color: #d14 }                    /* Literal.String.Single */
+.hl .ss    { color: #990073 }                 /* Literal.String.Symbol */
+.hl .bp    { color: #999999 }                 /* Name.Builtin.Pseudo */
+.hl .vc    { color: #008080 }                 /* Name.Variable.Class */
+.hl .vg    { color: #008080 }                 /* Name.Variable.Global */
+.hl .vi    { color: #008080 }                 /* Name.Variable.Instance */
+.hl .il    { color: #009999 }                 /* Literal.Number.Integer.Long */
+
+/* Markdown
+   ========================================================================= */
+
+.md ul {
+  display: list-item;
+  list-style-type: square;
+}
+
+.md ol {
+  display: list-item;
+  list-style-type: decimal-leading-zero;
+}
+
+.md li {
+  margin: 10px 0;
+  overflow: visible;
+}
+
+.md blockquote {
+  border-left: 3px solid #eeeeee;
+  padding-left: 10px;
+}
+
+.md b, .md strong {
+  color: #000000;
+}
+
+.md table {
+  width: 100%;
+}
+
+.md table thead {
+  text-align: center;
+}
+
+.md table tr {
+  padding: 10px 0px;
+}
+
+.md img {
+  display: block;
+  margin: 0 auto;
 }
 
 /* Selectize @author Brian Reavis <brian@thirdroute.com>

@@ -36,6 +36,8 @@ Run the configuration script.
 $ sudo rake install
 ```
 
+Later, you have to change the settings in the file config/nginx.conf, be sure to turn off ssl. (default: localhost:443)
+
 _Server works only in /home/netflam directory_
 
 ## Usage
@@ -92,6 +94,7 @@ $ sudo rake update
   * rack-protection
   * tilt
   * redcarpet
+  * pygments
 - Javascript
   * jquery.js
   * sifter.js
@@ -110,7 +113,8 @@ $ sudo rake update
 - [ ] pagination
 - [ ] about page
 - [ ] join using **twitter** or **github**
-- [ ] discussion/read story
+- [x] markdown with redcarpet and pygments
+- [x] discussion/read story
 - [x] user settings
 - [x] user profile
 - [x] meter using redis
@@ -122,6 +126,10 @@ $ sudo rake update
 ## Contributing
 
 Please feel free to contribute to this project! Pull requests and feature requests welcome! :v:
+
+<div align="center">
+  <img src="https://pbs.twimg.com/media/BuTj9ULCAAEd4G7.jpg:large"/>
+</div>
 
 _IRC chatroom, **#netflam** on freenode.net_
 

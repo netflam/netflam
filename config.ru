@@ -8,9 +8,13 @@ require "redis"           # Cache
 
 # Modules
 require "rack-protection" # Security
+require "tilt"            # Template
+require "redcarpet"       # Markdown
+require "pygments"        # Highlighter
 
 # Libraries
-require "yaml"
+require "yaml"            # Yaml
+require "time"            # Time
 
 # Application
 require "./app/netflam"   # Netflam

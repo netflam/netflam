@@ -1,5 +1,3 @@
-require "time"
-
 class Netflam
   class Response
     attr_accessor :status

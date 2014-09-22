@@ -1,6 +1,3 @@
-require "tilt"
-require "redcarpet"
-
 class Netflam
   module Render
     def self.setup(app)
@@ -63,18 +60,24 @@ class Netflam
   end
 
   module Markdown
-    render_options = {
+    class Renderer < Redcarpet::Render::HTML
+      # options
+      def initialize(options={})
         # will remove from the output HTML tags inputted by user
-        filter_html:     true,
+        super options.merge(filter_html:     true)
         # will insert <br /> tags in paragraphs where are newlines
-        hard_wrap:       true,
+        super options.merge(hard_wrap:       true)
         # hash for extra link options, for example 'nofollow'
-        link_attributes: { rel: 'nofollow' },
-        # Prettify
-        prettify:        true
-    }
+        super options.merge(link_attributes: { rel: 'nofollow' })
+      end
 
-    renderer = Redcarpet::Render::HTML.new(render_options)
+      # highlight with Pygments
+      def block_code(code, language)
+        language = language && language.split.first || "text"
+        Pygments.highlight(code, lexer: language,
+                                 options: {encoding: 'utf-8', cssclass: 'hl'})
+      end
+    end
 
     extensions = {
         #will parse links without need of enclosing them
@@ -92,12 +95,14 @@ class Netflam
         # will parse strikethrough from ~~, for example: ~~bad~~
         strikethrough:      true,
         # will parse superscript after ^, you can wrap superscript in ()
-        superscript:        true
+        superscript:        true,
         # will require a space after # in defining headers
-        # space_after_headers: true
+        # space_after_headers: true,
+        # will allow tables (html, md)
+        tables:             true
     }
 
-    @redcarpet = Redcarpet::Markdown.new(renderer, extensions = {})
+    @redcarpet = Redcarpet::Markdown.new(Renderer, extensions)
 
     class << self
       def render(object)
