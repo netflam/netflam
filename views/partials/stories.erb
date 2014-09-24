@@ -46,3 +46,16 @@
     </div>
 <% end %>
 </ol>
+
+<% unless @stories.nil? || @stories.count == 0  %>
+    <% if Netflam::Pagination.prev(@stories) == 0 %>
+        <b class="left">Prev</b>
+    <% else %>
+        <a href="?page=<%= Netflam::Pagination.prev(@stories) %>" class="left">Prev</a>
+    <% end %>
+    <% if Netflam::Pagination.header(@stories, :status) %>
+        <a href="?page=<%= Netflam::Pagination.next(@stories) %>" class="right">Next</a>
+    <% else %>
+        <b class="right">Next</b>
+    <% end %>
+<% end %>

@@ -21,7 +21,11 @@
                 <% end %>
                 </span>
                 <span class="domain"><%= URI(@story.url).host %></span>
-                <div class="extended md"><%= Netflam::Markdown.render(@story.extended) %></div>
+            <% unless @story.extended.nil? || @story.extended == '' %>
+                <div class="extended md">
+                    <%= Netflam::Markdown.render(@story.extended) %>
+                </div>
+            <% end %>
                 <div>
                     <a href="/s/<%= @story.id.to_s(32) %>/<%= @story.description.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>"><%= Meter.score(@story.id) %> points and 0 comments</a>
                     •

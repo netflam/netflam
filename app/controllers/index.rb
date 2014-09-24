@@ -6,17 +6,47 @@ class Netflam
       # get /
       # -------------------------------------------------------------------- */
       on root do
-        hot = Meter.top(0, 100)
-        @stories = Story.find(hot).sort_by! {|u| hot.index u[:id]}
+        # get /?page=:page
+        # ------------------------------------------------------------------ */
+        on param("page", true) do |page|
+          hot      = Meter.top(0, 100)
+          @stories = Story.find(hot).sort_by! {|s| hot.index s[:id]}
+          # @stories = Netflam::Pagination.page(@stories, page)
 
-        render("index")
+          render("index")
+        end
+
+        # get /
+        # ------------------------------------------------------------------ */
+        on true do
+          hot      = Meter.top(0, 100)
+          @stories = Story.find(hot).sort_by! {|s| hot.index s[:id]}
+          # @stories = Netflam::Pagination.page(@stories, 1)
+
+          render("index")
+        end
       end
 
       # get /recent
       # -------------------------------------------------------------------- */
       on "recent" do
-        @stories = Story.order("created_at DESC").limit(100)
-        render("recent")
+        # get /recent?page=:page
+        # ------------------------------------------------------------------ */
+        on param("page", true) do |page|
+          @stories = Story.recent
+          @stories = Netflam::Pagination.page(@stories, page)
+
+          render("recent")
+        end
+
+        # get /recent
+        # ------------------------------------------------------------------ */
+        on true do
+          @stories = Story.recent
+          @stories = Netflam::Pagination.page(@stories, 1)
+
+          render("recent")
+        end
       end
 
       # get /comments

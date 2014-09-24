@@ -109,9 +109,9 @@ $ sudo rake update
 - [ ] search engine
 - [ ] comments
 - [ ] tags
-- [ ] pagination
 - [ ] join using **twitter** or **github**
 - [ ] help
+- [x] pagination
 - [x] about page
 - [x] markdown with redcarpet and pygments
 - [x] discussion/read story

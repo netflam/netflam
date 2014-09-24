@@ -1,7 +1,7 @@
 class Netflam
     module Meter
-      @redis_votes  = :votes
-      @redis_users  = :users
+      @votes  = :votes
+      @users  = :users
 
       class << self
         def save(story_id)
@@ -10,8 +10,8 @@ class Netflam
           score = Netflam::Meter.score(story_id)
           karma = Netflam::Meter.karma(user_id)
 
-          $redis.zadd(@redis_votes.to_s, score + 1, story_id)
-          $redis.zadd(@redis_users.to_s, karma + 1, user_id)
+          $redis.zadd(@votes.to_s, score + 1, story_id)
+          $redis.zadd(@users.to_s, karma + 1, user_id)
         end
 
         def destroy(story_id)
@@ -21,26 +21,26 @@ class Netflam
           karma = Netflam::Meter.karma(user_id)
 
           if score > 1
-            $redis.zadd(@redis_votes.to_s, score - 1, story_id)
+            $redis.zadd(@votes.to_s, score - 1, story_id)
           else
-            $redis.zrem(@redis_votes.to_s, story_id)
+            $redis.zrem(@votes.to_s, story_id)
           end
 
-          $redis.zadd(@redis_users.to_s, karma - 1, user_id)
+          $redis.zadd(@users.to_s, karma - 1, user_id)
         end
 
         def score(story_id)
-          $redis.zscore(@redis_votes.to_s, story_id).to_i
+          $redis.zscore(@votes.to_s, story_id).to_i
         end
 
         def karma(user_id)
-          $redis.zscore(@redis_users.to_s, user_id).to_i
+          $redis.zscore(@users.to_s, user_id).to_i
         end
 
         def type(story_id)
           # a b c d e f
-          inta = $redis.zcard(@redis_votes.to_s)
-          rank = $redis.zrank(@redis_votes.to_s, story_id)
+          inta = $redis.zcard(@votes.to_s)
+          rank = $redis.zrank(@votes.to_s, story_id)
           bttm = inta / 6
 
           if rank != nil and inta != nil
@@ -63,7 +63,7 @@ class Netflam
         end
 
         def top(a, b)
-          $redis.zrevrange(@redis_votes.to_s, a, b)
+          $redis.zrevrange(@votes.to_s, a, b)
         end
       end
     end

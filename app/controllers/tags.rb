@@ -3,13 +3,25 @@ class Netflam
     class Tags < Netflam; end
 
     Tags.define do
-      # not ready
-
+      # get /t/:name
+      # -------------------------------------------------------------------- */
       on ":name" do |name|
+        # get /t/:name?page=:page
+        # ------------------------------------------------------------------ */
+        on param("page", true) do |page|
+          @stories = Story.joins(:tags).where(tags: {name: [name]}).recent
+          @stories = Netflam::Pagination.page(@stories, page)
+
+          render("tag")
+        end
+
         # get /t/:name
-        # ---------------------------------------------------------------- */
+        # ------------------------------------------------------------------ */
         on true do
-          res.write "not ready! (" + name + ")"
+          @stories = Story.joins(:tags).where(tags: {name: [name]}).recent
+          @stories = Netflam::Pagination.page(@stories, 1)
+
+          render("tag")
         end
       end
     end

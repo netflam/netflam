@@ -33,11 +33,27 @@ class Netflam
             end
           end
 
+
           # get /u/:username
           # ---------------------------------------------------------------- */
           on true do
-            @stories = @user.stories.limit(100)
-            render("profile")
+            # get /u/:username?page=:page
+            # -------------------------------------------------------------- */
+            on param("page", true) do |page|
+              @stories = @user.stories.recent
+              @stories = Netflam::Pagination.page(@stories, page)
+
+              render("profile")
+            end
+
+            # get /u/:username
+            # -------------------------------------------------------------- */
+            on true do
+              @stories = @user.stories.recent
+              @stories = Netflam::Pagination.page(@stories, 1)
+
+              render("profile")
+            end
           end
         end
       end

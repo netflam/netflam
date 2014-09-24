@@ -245,8 +245,12 @@ class Netflam
   #   on "signup", param("user") do |atts|
   #     User.create(atts)
   #   end
-  def param(key)
-    lambda { captures << req[key] } # change to empty params
+  def param(key, block = false)
+    if block
+      lambda { captures << req[key] unless req[key].to_s.empty? }
+    else
+      lambda { captures << req[key] } # change to empty params
+    end
   end
 
   def header(key)
