@@ -52,13 +52,13 @@ task :clean do
   puts "netflam logger files removed..."
 end
 
-# UPDATE - update project from official repository
-task :update do
+# UPGRADE - upgrade project from official repository
+task :upgrade do
   # Github
   %x(curl -L -o .cache http://github.com/netflam/netflam/archive/master.zip)
   %x(unzip .cache)
   %x(cp -r netflam-master/* .)
   %x(rm -rf .cache netflam-master)
 
-  puts "netflam updated..."
+  puts "netflam upgraded..."
 end

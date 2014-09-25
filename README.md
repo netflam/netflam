@@ -74,12 +74,12 @@ Delete all files that not belong to the source code. (logs, dbs, pids, lock)
 $ sudo rake clean
 ```
 
-### Update
+### Upgrade
 
-Updates all scripts using the main repository developed by the community.
+Upgrades all scripts using the main repository developed by the community.
 
 ```bash
-$ sudo rake update
+$ sudo rake upgrade
 ```
 
 ## Dependencies
