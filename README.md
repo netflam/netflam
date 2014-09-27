@@ -119,7 +119,9 @@ $ sudo rake upgrade
 
 - [ ] mobile version
 - [ ] sync stories with **dropbox**
+- [ ] list of projects and members at **github** (netflammers)
 - [ ] API
+- [ ] KaTeX for math
 - [ ] chrome/web widget (comments)
 - [ ] search engine
 - [ ] tags
