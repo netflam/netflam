@@ -52,7 +52,23 @@ class Netflam
       # get /comments
       # -------------------------------------------------------------------- */
       on "comments" do
-        res.write "not ready!"
+        # get /comments?page=:page
+        # ------------------------------------------------------------------ */
+        on param("page", true) do |page|
+          @comments = Comment.recent
+          @comments = Netflam::Pagination.page(@comments, page)
+
+          render("comments")
+        end
+
+        # get /comments
+        # ------------------------------------------------------------------ */
+        on true do
+          @comments = Comment.recent
+          @comments = Netflam::Pagination.page(@comments, 1)
+
+          render("comments")
+        end
       end
 
       # get /search

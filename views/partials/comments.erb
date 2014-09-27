@@ -1,0 +1,39 @@
+<ol class="comments">
+<% for comment in @comments %>
+    <span class="link">
+    <% unless comment.story.url.nil? || comment.story.url == '' %>
+        <a href="<%= comment.story.url %>"><%= comment.story.description %></a>
+    <% else %>
+        <a href="/s/<%= comment.story.id.to_s(32) %>/<%= comment.story.description.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>"><%= comment.story.description %></a>
+    <% end %>
+    </span>
+    <li data-id="<%= comment.id.to_s(32) %>">
+        <div class="col-9 md">
+            <%= Netflam::Markdown.render(comment.extended) %>
+        </div>
+        <div class="col-3 details">
+            <a href="/u/<%= comment.user.username %>">
+                <img src="https://secure.gravatar.com/avatar/<%= Digest::MD5.hexdigest(comment.user.email) %>?s=36&amp;d=identicon" alt="<%= comment.user.username %>" class="right" />
+            </a>
+            <%= comment.user.username %><br>
+            <span><%= Netflam::Functions.ago(comment.created_at.to_i) %></span><br>
+        <% if session[:user] == comment.user %>
+            <a href="#comment" class="destroy left">destroy</a>
+        <% end %>
+        </div>
+    </li>
+<% end %>
+</ol>
+
+<% unless @comments.nil? || @comments.count == 0  %>
+    <% if Netflam::Pagination.prev(@comments) == 0 %>
+        <b class="left">Prev</b>
+    <% else %>
+        <a href="?page=<%= Netflam::Pagination.prev(@comments) %>" class="left">Prev</a>
+    <% end %>
+    <% if Netflam::Pagination.header(@comments, :status) %>
+        <a href="?page=<%= Netflam::Pagination.next(@comments) %>" class="right">Next</a>
+    <% else %>
+        <b class="right">Next</b>
+    <% end %>
+<% end %>

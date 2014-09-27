@@ -815,6 +815,11 @@ ol.comments {
   margin: 0;
 }
 
+.comments .link a {
+  color: #2ecc71;
+  text-decoration: none;
+}
+
 .comments li {
   margin-bottom: 14px;
 }
