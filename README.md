@@ -23,9 +23,9 @@ We look for smart, friendly, self-directed, and intellectually curious people wh
 
 Ourselves we invent, create and develop this service/platform, tools and libraries, adapting to our own ideas.
 
-People who contribute to [netflam's projects](https://github.com/netflam) will be added after a certain time to the our [team](https://github.com/orgs/netflam/people).
+People who contribute to [netflam's projects](https://github.com/netflam) will be added after a certain time to our [team](https://github.com/orgs/netflam/people).
 
-Then you will become real netflammer, not only user.
+Then you become real netflammer, not only user.
 
 Together we create a wonderful open community!
 
