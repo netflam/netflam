@@ -478,11 +478,14 @@ b { font-weight: bold; color: #000; }
 hr {
   margin: 20px 0;
   border: 0px;
-  border-top: 3px solid #eee;
+  border-top: 3px solid #ecf0f1;
 }
 
+hr.t { margin-top: 0px; }
+hr.b { margin-bottom: 0px; }
+
 .box {
-  border: 3px solid #eeeeee;
+  border: 3px solid #ecf0f1;
   padding: 15px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -520,6 +523,7 @@ h4:first-child, h5:first-child, h6:first-child {
 
 [class*='col-'] {
   float: left;
+  min-height: 1px;
   /* padding: 0.3em; NEED TESTS */
 }
 
@@ -558,7 +562,7 @@ form input, form textarea, form button {
 
 input {
   height: 40px;
-  border: 3px solid #eee;
+  border: 3px solid #ecf0f1;
   padding-left: 15px;
   padding-right: 15px;
   outline: none;
@@ -566,7 +570,7 @@ input {
 
 textarea {
   height: 150px;
-  border: 3px solid #eee;
+  border: 3px solid #ecf0f1;
   padding: 15px;
   outline: none;
 }
@@ -585,6 +589,10 @@ textarea {
   text-align: center;
   letter-spacing: 1px;
   padding: 0.5em 1em;
+}
+
+.button:focus {
+  outline: 0;
 }
 
 .button:hover, .button.disable {
@@ -636,7 +644,7 @@ textarea {
 .masthead {
   font-weight: bold;
   font-size: 9.5pt;
-  height: 48px;
+  height: 50px;
 }
 
 .masthead img {
@@ -686,7 +694,7 @@ textarea {
 
 .footer ul {
   height: 16px;
-  margin-top: 0px;
+  margin: 20px 0;
   padding-left: 0px;
 }
 
@@ -798,6 +806,32 @@ ol.stories {
 .stories .details .edit    { color: #f1c40f; }
 .stories .details .destroy { color: #e74c3c; }
 
+/* Comments
+   ========================================================================= */
+
+ol.comments {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.comments li {
+  margin-bottom: 14px;
+}
+
+.comments div.md {
+  padding-right: 10px;
+}
+
+.comments .details span {
+  font-size: 11px;
+}
+
+.comments .details .destroy {
+  color: #e74c3c;
+  text-decoration: none;
+}
+
 /* Tags
    ========================================================================= */
 
@@ -807,7 +841,7 @@ ol.stories {
   cursor: pointer;
   margin: 0 3px 3px 0;
   padding: 2px 6px;
-  background: #eee;
+  background: #ecf0f1;
 }
 
 .tag#meta {
@@ -939,7 +973,7 @@ ol.stories {
 }
 
 .md blockquote {
-  border-left: 3px solid #eeeeee;
+  border-left: 3px solid #ecf0f1;
   padding-left: 10px;
 }
 
@@ -962,6 +996,10 @@ ol.stories {
 .md img {
   margin: 0 auto;
   max-width: 100%;
+}
+
+.md p {
+  margin: 0px;
 }
 
 /* Selectize @author Brian Reavis <brian@thirdroute.com>
@@ -1099,7 +1137,7 @@ input #input-tags {
 }
 
 .selectize-input {
-  border: 3px solid #eee;
+  border: 3px solid #ecf0f1;
   padding: 8px 8px;
   display: inline-block;
   width: 100%;
@@ -1205,7 +1243,7 @@ input #input-tags {
 .selectize-dropdown {
   position: absolute;
   z-index: 10;
-  border: 3px solid #eee;
+  border: 3px solid #ecf0f1;
   background: #ffffff;
   margin: -4px 0 0 0;
   border-top: 0 none;

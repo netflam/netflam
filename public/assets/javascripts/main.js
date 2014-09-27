@@ -41,10 +41,24 @@ $( document ).ready(function() {
         }else{
             $.ajax({
                 type: "GET",
-                url: "/s/" + $(this).closest("ol.stories li").attr("data-id") + "/destroy"
+                url: "/c/" + $(this).closest("ol.comments li").attr("data-id") + "/destroy"
             });
 
-            $(this).closest("ol.stories li").css("opacity", 0.3);
+            $(this).closest("ol.comments li").css("opacity", 0.3);
+        }
+    });
+
+    $("form").submit(function( event ) {
+        if ($(this).attr("action") == '/c/new') {
+            event.preventDefault();
+
+            $.ajax({
+                type: "POST",
+                url: "/c/new",
+                data: $(this).serialize()
+            });
+
+            $('ol.comments').append("<li><div class='box green'>Your comment has been correctly added.</li>");
         }
     });
 });

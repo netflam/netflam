@@ -107,10 +107,10 @@ $ sudo rake upgrade
 - [ ] API
 - [ ] chrome/web widget (comments)
 - [ ] search engine
-- [ ] comments
 - [ ] tags
 - [ ] join using **twitter** or **github**
 - [ ] help
+- [x] comments
 - [x] pagination
 - [x] about page
 - [x] markdown with redcarpet and pygments

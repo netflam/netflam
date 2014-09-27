@@ -27,7 +27,7 @@
                 </div>
             <% end %>
                 <div>
-                    <a href="/s/<%= @story.id.to_s(32) %>/<%= @story.description.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>"><%= Meter.score(@story.id) %> points and 0 comments</a>
+                    <a href="/s/<%= @story.id.to_s(32) %>/<%= @story.description.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>"><%= Meter.score(@story.id) %> points and <%= @story.comments.count %> comments</a>
                     •
                     <label title="<%= @story.created_at %>"><%= Netflam::Functions.ago(@story.created_at.to_i) %></label>
                     by
@@ -48,5 +48,57 @@
         </li>
     </ol>
 </div>
+
+<% unless @story.comments.nil? || @story.comments.count == 0 %>
+<div class="grid">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <hr>
+        <ol class="comments">
+        <% for comment in @story.comments %>
+            <li data-id="<%= comment.id.to_s(32) %>">
+                <div class="col-9 md">
+                    <%= Netflam::Markdown.render(comment.extended) %>
+                </div>
+                <div class="col-3 details">
+                    <a href="/u/<%= comment.user.username %>">
+                        <img src="https://secure.gravatar.com/avatar/<%= Digest::MD5.hexdigest(comment.user.email) %>?s=36&amp;d=identicon" alt="<%= comment.user.username %>" class="right" />
+                    </a>
+                    <%= comment.user.username %><br>
+                    <span><%= Netflam::Functions.ago(comment.created_at.to_i) %></span><br>
+                <% if session[:user] == comment.user %>
+                    <a href="#comment" class="destroy left">destroy</a>
+                <% end %>
+                </div>
+            </li>
+        <% end %>
+        </ol>
+    </div>
+    <div class="col-1"></div>
+</div>
+<% else %>
+<div class="grid">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <hr>
+        <ol class="comments"></ol>
+    </div>
+    <div class="col-1"></div>
+</div>
+<% end %>
+
+<% if session[:auth] %>
+<div class="grid">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <form accept-charset="UTF-8" action="/c/new" method="POST">
+            <input type="hidden" name="id" value="<%= @story.id.to_s(32) %>">
+            <textarea name="extended" placeholder="Extended (markdown: on)" style="height: 55px;"></textarea>
+            <button class="button">New</button>
+        </form>
+    </div>
+    <div class="col-1"></div>
+</div>
+<% end %>
 
 <%= partial 'partials/footer' %>
