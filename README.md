@@ -126,7 +126,7 @@ $ sudo rake upgrade
 
 ## Contributing
 
-Please feel free to contribute to this project! Pull requests and feature requests welcome! :v:
+Please feel free to contribute to this project! Good code is delicious! Pull requests and feature requests welcome! :v:
 
 <div align="center">
   <img src="https://pbs.twimg.com/media/BuTj9ULCAAEd4G7.jpg:large"/>
