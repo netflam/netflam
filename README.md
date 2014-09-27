@@ -3,10 +3,10 @@
   <br />
   Netflam, your Hackerspace. <br /> Is's a community where people can discuss, share interesting links, questions and timely events.
   <br /><br />
-  <a href="https://travis-ci.org/netflam/netflam"><img src="http://img.shields.io/travis/netflam/netflam.svg" /></a>
-  <a href="https://github.com/netflam/netflam/releases"><img src="http://img.shields.io/github/release/netflam/netflam.svg" /></a>
-  <a href="https://github.com/netflam/netflam/issues"><img src="http://img.shields.io/github/issues/netflam/netflam.svg" /></a>
-  <a href="https://netflam.com/"><img src="http://img.shields.io/badge/url-netflam.com-brightgreen.svg" /></a>
+  <a href="https://travis-ci.org/netflam/netflam"><img src="https://img.shields.io/travis/netflam/netflam.svg" /></a>
+  <a href="https://github.com/netflam/netflam/releases"><img src="https://img.shields.io/github/release/netflam/netflam.svg" /></a>
+  <a href="https://github.com/netflam/netflam/issues"><img src="https://img.shields.io/github/issues/netflam/netflam.svg" /></a>
+  <a href="https://netflam.com/"><img src="https://img.shields.io/badge/url-netflam.com-brightgreen.svg" /></a>
 </p>
 
 ---
