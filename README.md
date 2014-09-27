@@ -127,11 +127,15 @@ $ sudo rake upgrade
 
 ## Contributing
 
-Please feel free to contribute to this project! Good code is delicious! Pull requests and feature requests welcome! :v:
+Please feel free to contribute to this project! Remember, good code is delicious! Pull requests and feature requests welcome! :v:
 
 <div align="center">
   <img src="https://pbs.twimg.com/media/BuTj9ULCAAEd4G7.jpg:large"/>
 </div>
+
+People who are contributing to [netflam projects](https://github.com/netflam) will be added to the our [team](https://github.com/orgs/netflam/people).
+
+Together we create a wonderful open community!
 
 _IRC chatroom, **#netflam** on freenode.net_
 
