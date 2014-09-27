@@ -103,6 +103,7 @@ $ sudo rake upgrade
 
 ## Conceptions
 
+- [ ] mobile version
 - [ ] sync stories with **dropbox**
 - [ ] API
 - [ ] chrome/web widget (comments)
