@@ -122,6 +122,7 @@ $ sudo rake upgrade
 - [ ] list of projects and members at **github** (netflammers)
 - [ ] API
 - [ ] KaTeX for math
+- [ ] better metatags (title, twitter, opengraph)
 - [ ] chrome/web widget (comments)
 - [ ] search engine
 - [ ] tags
