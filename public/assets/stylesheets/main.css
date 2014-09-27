@@ -832,6 +832,10 @@ ol.comments {
   text-decoration: none;
 }
 
+.comments .md p {
+  margin: 0px;
+}
+
 /* Tags
    ========================================================================= */
 
@@ -996,10 +1000,6 @@ ol.comments {
 .md img {
   margin: 0 auto;
   max-width: 100%;
-}
-
-.md p {
-  margin: 0px;
 }
 
 /* Selectize @author Brian Reavis <brian@thirdroute.com>

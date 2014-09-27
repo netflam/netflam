@@ -110,6 +110,7 @@ $ sudo rake upgrade
 - [ ] tags
 - [ ] join using **twitter** or **github**
 - [ ] help
+- [ ] notifications
 - [x] comments
 - [x] pagination
 - [x] about page
