@@ -15,6 +15,20 @@
   <img src="https://dl.dropboxusercontent.com/u/103345209/Screenshots/Screenshot%202014-09-14%2018.22.57.png"/>
 </div>
 
+#### About
+
+The atmosphere here is friendly and intellectual. We have a gender-balanced environment, and lightweight social rules.
+
+We look for smart, friendly, self-directed, and intellectually curious people who enjoy programming and want to get dramatically better.
+
+Ourselves we invent, create and develop this service/platform, tools and libraries, adapting to our own ideas.
+
+People who contribute to [netflam's projects](https://github.com/netflam) will be added after a certain time to the our [team](https://github.com/orgs/netflam/people).
+
+Then you will become real netflammer, not only user.
+
+Together we create a wonderful open community!
+
 #### More reading:
 
 - [Installation](#installation): Step-by-step instructions for getting netflam running on your computer.
@@ -132,10 +146,6 @@ Please feel free to contribute to this project! Remember, good code is delicious
 <div align="center">
   <img src="https://pbs.twimg.com/media/BuTj9ULCAAEd4G7.jpg:large"/>
 </div>
-
-People who are contributing to [netflam projects](https://github.com/netflam) will be added to the our [team](https://github.com/orgs/netflam/people).
-
-Together we create a wonderful open community!
 
 _IRC chatroom, **#netflam** on freenode.net_
 
