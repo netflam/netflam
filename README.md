@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/netflam/netflam/master/public/assets/images/shortcuts/16.png" alt="netflam" />
   <br />
-  Netflam, your Hackerspace. <br /> Is's a community where people can discuss, share interesting links, questions and timely events.
+  Netflam, your Hackerspace. <br /> It's a community where people can discuss and share interesting links, questions and timely events.
   <br /><br />
   <a href="https://travis-ci.org/netflam/netflam"><img src="https://img.shields.io/travis/netflam/netflam.svg" /></a>
   <a href="https://github.com/netflam/netflam/releases"><img src="https://img.shields.io/github/release/netflam/netflam.svg" /></a>
@@ -25,11 +25,11 @@ Ourselves we invent, create and develop this service/platform, tools and librari
 
 People who contribute to [netflam's projects](https://github.com/netflam) will be added after a certain time to our [team](https://github.com/orgs/netflam/people).
 
-Then you become real netflammer, not only user.
+Then you become a real netflammer, not only a user.
 
-Together we create a wonderful open community!
+Together, we create a wonderful and open community!
 
-#### More reading:
+#### Further reading:
 
 - [Installation](#installation): Step-by-step instructions for getting netflam running on your computer.
 - [Usage](#usage): List of commands.
@@ -40,17 +40,17 @@ Together we create a wonderful open community!
 
 ## Installation
 
-When an archive file of netflam is extracted, change the current working directory to the generated directory and perform installation.
+When an archive file of netflam is extracted, change the current working directory to the generated directory and perform the installation.
 
-Run the configuration script.
+Run the configuration script:
 
 ```bash
 $ sudo rake install
 ```
 
-Later, you have to change the settings in the file config/nginx.conf, be sure to turn off ssl. (default: localhost:443)
+Later, you have to change the settings in the file config/nginx.conf; be sure to turn off ssl (default: localhost:443).
 
-_Server works only in /home/netflam directory_
+_The server works only in the /home/netflam directory._
 
 ## Usage
 
@@ -58,7 +58,7 @@ This script is the primary interface for starting and stopping the netflam serve
 
 ### Install
 
-To install all gems and create database.
+To install all gems and create database:
 
 ```bash
 $ sudo rake install
@@ -66,7 +66,7 @@ $ sudo rake install
 
 ### Start
 
-To start a daemonized (background) instance of netflam.
+To start a daemonized (background) instance of netflam:
 
 ```bash
 $ sudo rake start
@@ -74,7 +74,7 @@ $ sudo rake start
 
 ### Stop
 
-Stopping a background instance of netflam can be done from a shell prompt.
+Stopping a background instance of netflam can be done from a shell prompt:
 
 ```bash
 $ sudo rake stop
@@ -82,7 +82,7 @@ $ sudo rake stop
 
 ### Restart
 
-Restarting the background instance of netflam can be done from a shell prompt too.
+Restarting the background instance of netflam can be done from a shell prompt too:
 
 ```bash
 $ sudo rake restart
@@ -90,7 +90,7 @@ $ sudo rake restart
 
 ### Clean
 
-Delete all files that not belong to the source code. (logs, dbs, pids, lock)
+Delete all files that do not belong to the source code (logs, dbs, pids, lock):
 
 ```bash
 $ sudo rake clean
@@ -98,7 +98,7 @@ $ sudo rake clean
 
 ### Upgrade
 
-Upgrades all scripts using the main repository developed by the community.
+Upgrades all scripts using the main repository developed by the community:
 
 ```bash
 $ sudo rake upgrade
@@ -106,7 +106,7 @@ $ sudo rake upgrade
 
 ### Migrate (not implemented)
 
-Migrate works the same as install. (complements differences)
+Migrate works the same way as install (complements differences):
 
 ```bash
 $ sudo rake install
@@ -174,7 +174,7 @@ Please feel free to contribute to this project! Remember, good code is delicious
   <img src="https://pbs.twimg.com/media/BuTj9ULCAAEd4G7.jpg:large"/>
 </div>
 
-_IRC chatroom, **#netflam** on freenode.net_
+_IRC chatroom: **#netflam** on freenode.net_
 
 ## License
 
