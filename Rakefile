@@ -1,4 +1,5 @@
-task default: %w[start] # START STOP INSTALL CLEAN
+# START STOP RESTART INSTALL CLEAN UPGRADE CONSOLE
+task default: %w[start]
 
 # START - Start cluster (redis & unicorn & nginx)
 task :start do
