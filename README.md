@@ -80,6 +80,14 @@ Stopping a background instance of netflam can be done from a shell prompt.
 $ sudo rake stop
 ```
 
+### Restart
+
+Restarting the background instance of netflam can be done from a shell prompt too.
+
+```bash
+$ sudo rake restart
+```
+
 ### Clean
 
 Delete all files that not belong to the source code. (logs, dbs, pids, lock)
@@ -102,6 +110,14 @@ Migrate works the same as install. (complements differences)
 
 ```bash
 $ sudo rake install
+```
+
+### Console
+
+Start an IRB shell with the netflam environment loaded.
+
+```bash
+$ sudo rake console
 ```
 
 ## Dependencies
