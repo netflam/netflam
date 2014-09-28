@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   validates :password, length: { in: 6..20 }
   validates :realname, length: { minimum: 2 }
   validates :bio, length: { maximum: 500 }, presence: false
+
+  has_secure_password validations: false
 end

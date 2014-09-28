@@ -43,7 +43,7 @@ class Netflam
           user = User.find_by_email(email)
 
           unless user.nil? || user == 0
-            if user.password == password
+            if user.authenticate(password)
               session[:auth] = true
               session[:user] = user
               res.redirect "/"
