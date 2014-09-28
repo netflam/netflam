@@ -11,7 +11,7 @@ gem "redis"           # Cache
 
 # Modules
 gem "rack-protection" # Security
-gem "bcrypt"          # Password hashing
+gem "bcrypt"          # Hashing
 gem "tilt"            # Template
 gem "redcarpet"       # Markdown
 gem "pygments.rb"     # Highlighter

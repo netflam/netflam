@@ -96,6 +96,14 @@ Upgrades all scripts using the main repository developed by the community.
 $ sudo rake upgrade
 ```
 
+### Migrate
+
+Migrate works the same as install. (complements differences)
+
+```bash
+$ sudo rake install
+```
+
 ## Dependencies
 
 - Ruby (>= 1.9.0)
