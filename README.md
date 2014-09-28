@@ -82,7 +82,7 @@ $ sudo rake stop
 
 ### Restart
 
-Call stop and then start.
+Restarting the background instance of netflam can be done from a shell prompt too.
 
 ```bash
 $ sudo rake restart
@@ -114,7 +114,7 @@ $ sudo rake install
 
 ### Console
 
-Launch a REPL with environment loaded.
+Start an IRB shell with the netflam environment loaded.
 
 ```bash
 $ sudo rake console

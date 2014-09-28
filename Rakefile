@@ -1,7 +1,7 @@
 # START STOP RESTART INSTALL CLEAN UPGRADE CONSOLE
 task default: %w[start]
 
-# START - Start cluster (redis & unicorn & nginx)
+desc 'Start cluster (redis & unicorn & nginx)'
 task :start do
   # Redis
   %x(redis-server ${PWD}/config/redis.conf)
@@ -13,7 +13,7 @@ task :start do
   puts "netflam started..."
 end
 
-# STOP - Stop cluster, removes .pid and .sock files
+desc 'Stop cluster, removes .pid and .sock files'
 task :stop do
   # Kill processes
   %x(nginx -c ${PWD}/config/nginx.conf -s stop)
@@ -25,13 +25,13 @@ task :stop do
   puts "netflam stopped..."
 end
 
-# RESTART - Call stop and then start.
+desc 'Call stop and then start.'
 task :restart do
   Rake::Task[:stop].invoke
   Rake::Task[:start].invoke
 end
 
-# INSTALL - Install, prepare cluster
+desc 'Install, prepare cluster'
 task :install do
   # Requires
   require "yaml"
@@ -48,7 +48,7 @@ task :install do
   puts "netflam installed..."
 end
 
-# CLEAN - remove all files
+desc 'remove all files'
 task :clean do
   # Redis & Unicorn & Nginx
   %x(rm -rf ${PWD}/log/*)
@@ -60,7 +60,7 @@ task :clean do
   puts "netflam logger files removed..."
 end
 
-# UPGRADE - upgrade project from official repository
+desc 'upgrade project from official repository'
 task :upgrade do
   # Github
   %x(curl -L -o .cache http://github.com/netflam/netflam/archive/master.zip)
@@ -71,7 +71,7 @@ task :upgrade do
   puts "netflam upgraded..."
 end
 
-# CONSOLE - launch a REPL with environment loaded.
+desc 'launch a REPL with environment loaded.'
 task :console do
   $LOAD_PATH.unshift(File.join File.dirname(__FILE__), 'app')
 
