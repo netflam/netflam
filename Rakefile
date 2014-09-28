@@ -48,7 +48,7 @@ task :install do
   puts "netflam installed..."
 end
 
-desc 'remove all files'
+desc 'Remove all files'
 task :clean do
   # Redis & Unicorn & Nginx
   %x(rm -rf ${PWD}/log/*)
@@ -60,7 +60,7 @@ task :clean do
   puts "netflam logger files removed..."
 end
 
-desc 'upgrade project from official repository'
+desc 'Upgrade project from official repository'
 task :upgrade do
   # Github
   %x(curl -L -o .cache http://github.com/netflam/netflam/archive/master.zip)
@@ -71,7 +71,7 @@ task :upgrade do
   puts "netflam upgraded..."
 end
 
-desc 'launch a REPL with environment loaded.'
+desc 'Launch a REPL with environment loaded.'
 task :console do
   $LOAD_PATH.unshift(File.join File.dirname(__FILE__), 'app')
 
