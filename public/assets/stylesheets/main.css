@@ -832,6 +832,11 @@ ol.comments {
   font-size: 11px;
 }
 
+.comments .details .edit {
+  color: #f1c40f;
+  text-decoration: none;
+}
+
 .comments .details .destroy {
   color: #e74c3c;
   text-decoration: none;

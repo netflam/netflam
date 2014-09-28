@@ -1,0 +1,20 @@
+<%= partial 'partials/masthead' %>
+
+<div class="grid">
+    <h1>Edit a comment</h1>
+    <p>Remember that the changes were not too big. For large changes better idea is to write a new one.</p>
+<% unless @errors.nil? || @errors == 0 %>
+    <div class="box red">
+    <% @errors.each_pair do |key, value| %>
+        <p><%= key.capitalize %> <%= value[0] %>.</p>
+    <% end %>
+    </div>
+<% end %>
+    <form accept-charset="UTF-8" action="/c/<%= @comment.id.to_s(32) %>/edit" method="POST">
+        <input type="hidden" name="id" value="<%= @comment.story.id.to_s(32) %>">
+        <textarea name="extended" placeholder="Extended (markdown: on)"><%= @comment.extended %></textarea>
+        <button class="button">Edit</button>
+    </form>
+</div>
+
+<%= partial 'partials/footer' %>
