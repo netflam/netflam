@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
 
   validates :email, length: { minimum: 2 }, email: true, uniqueness: true
   validates :username, length: { minimum: 2 }, uniqueness: true
-  validates :password, length: { in: 6..20 }
+  validates :password, length: { in: 6..20 }, allow_nil: true
+  validates :password_digest, presence: true
   validates :realname, length: { minimum: 2 }
   validates :bio, length: { maximum: 500 }, presence: false
 
