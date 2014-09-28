@@ -62,7 +62,7 @@ class Netflam
             # get /s/:id/edit
             # -------------------------------------------------------------- */
             on get do
-              render("edit")
+              render("story")
             end
 
             # post /s/:id/edit (url, description, extended, tags)
@@ -83,7 +83,7 @@ class Netflam
               if story.valid? == false
                 @errors = story.errors.messages
                 story = @story
-                render("edit")
+                render("story")
               else
                 story.save
                 res.redirect "/s/" + @story.id.to_s(32)

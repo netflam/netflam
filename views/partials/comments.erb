@@ -18,7 +18,11 @@
             <%= comment.user.username %><br>
             <span><%= Netflam::Functions.ago(comment.created_at.to_i) %></span><br>
         <% if session[:user] == comment.user %>
-            <a href="#comment" class="destroy left">destroy</a>
+            <span class="left">
+                <a href="/c/<%= comment.id.to_s(32) %>/edit" class="edit">edit</a>
+                •
+                <a href="#comment" class="destroy">destroy</a>
+            </span>
         <% end %>
         </div>
     </li>

@@ -104,7 +104,7 @@ Upgrades all scripts using the main repository developed by the community.
 $ sudo rake upgrade
 ```
 
-### Migrate
+### Migrate (not implemented)
 
 Migrate works the same as install. (complements differences)
 
@@ -152,14 +152,14 @@ $ sudo rake console
 - [ ] tags
 - [ ] join using **twitter** or **github**
 - [ ] help
-- [ ] notifications
+- [ ] user profile (with karma, comments)
+- [ ] notifications (mention, comments)
 - [x] comments
 - [x] pagination
 - [x] about page
 - [x] markdown with redcarpet and pygments
 - [x] discussion/read story
 - [x] user settings
-- [x] user profile
 - [x] meter using redis
 - [x] join and login
 - [x] handling story (new, edit, destroy)

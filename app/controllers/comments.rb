@@ -35,6 +35,30 @@ class Netflam
               Comment.destroy(@comment.id)
             end
           end
+
+          on "edit" do
+            # get /c/:id/edit
+            # -------------------------------------------------------------- */
+            on get do
+              render("comment")
+            end
+
+            # post /c/:id/edit (extended)
+            # -------------------------------------------------------------- */
+            on post, param("extended") do |extended|
+              comment = @comment
+              comment.extended = extended
+
+              if comment.valid? == false
+                @errors = comment.errors.messages
+                comment = @comment
+                render("comment")
+              else
+                comment.save
+                res.redirect "/s/" + @comment.story.id.to_s(32) + "#" + @comment.id.to_s(32)
+              end
+            end
+          end
         end
       end
     end
