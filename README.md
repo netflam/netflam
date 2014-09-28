@@ -136,6 +136,7 @@ $ sudo rake install
 - [ ] tags
 - [ ] join using **twitter** or **github**
 - [ ] help
+- [ ] user profile (with karma, comments)
 - [ ] notifications
 - [x] comments
 - [x] pagination
@@ -143,7 +144,6 @@ $ sudo rake install
 - [x] markdown with redcarpet and pygments
 - [x] discussion/read story
 - [x] user settings
-- [x] user profile
 - [x] meter using redis
 - [x] join and login
 - [x] handling story (new, edit, destroy)
