@@ -11,5 +11,5 @@ class User < ActiveRecord::Base
   validates :realname, length: { minimum: 2 }
   validates :bio, length: { maximum: 500 }, presence: false
 
-  has_secure_password
+  has_secure_password validations: false
 end
