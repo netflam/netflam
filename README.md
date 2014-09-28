@@ -153,7 +153,7 @@ $ sudo rake console
 - [ ] join using **twitter** or **github**
 - [ ] help
 - [ ] user profile (with karma, comments)
-- [ ] notifications
+- [ ] notifications (mention, comments)
 - [x] comments
 - [x] pagination
 - [x] about page
