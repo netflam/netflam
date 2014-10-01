@@ -1,0 +1,26 @@
+<%= partial 'partials/masthead' %>
+
+<div class="grid">
+    <ol class="notifications">
+<% unless @notifications.nil? || @notifications.count == 0  %>
+    <% for notification in @notifications %>
+        <li>
+            <div class="left">
+                <span class="link">
+                    <a href="/s/<%= notification.to_s(32) %>"><%= Story.find(notification).description %></a>
+                </span>
+            </div>
+            <div class="right">
+                new comment
+            </div>
+        </li>
+    <% end %>
+    </ol>
+<% else %>
+    <div class="box">
+        Nothing to show!
+    </div>
+<% end %>
+</div>
+
+<%= partial 'partials/footer' %>

@@ -71,6 +71,16 @@ class Netflam
         end
       end
 
+      # get /notifications
+      # -------------------------------------------------------------------- */
+      on "notifications" do
+        @notifications = Netflam::Notification.notify(session[:user].id)
+
+        Netflam::Notification.destroy(session[:user].id)
+
+        render("notifications")
+      end
+
       # get /search
       # -------------------------------------------------------------------- */
       on "search" do

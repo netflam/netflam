@@ -4,11 +4,18 @@ class Comment < ActiveRecord::Base
 
   validates :extended, length: { minimum: 2 }, presence: true
 
+  after_save :notifications_save
+
   def self.recent
     order("created_at DESC")
   end
 
-  def self.popular # DON'T WORK
-
+  def self.popular
+    # DON'T WORK
   end
+
+  private
+    def notifications_save
+      Netflam::Notification.save(user_id, story_id)
+    end
 end

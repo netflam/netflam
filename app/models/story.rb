@@ -12,7 +12,7 @@ class Story < ActiveRecord::Base
     order("created_at DESC")
   end
 
-  def self.popular # DON'T WORK
-    find(Meter.top(0, 100)).sort_by! {|u| Meter.top(0, 100).index u[:id]}
+  def self.popular
+    # DON'T WORK
   end
 end

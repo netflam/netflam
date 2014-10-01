@@ -846,6 +846,20 @@ ol.comments {
   margin: 0px;
 }
 
+/* Notifications
+   ========================================================================= */
+
+ol.notifications {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.notifications .link a {
+  color: #2ecc71;
+  text-decoration: none;
+}
+
 /* Tags
    ========================================================================= */
 

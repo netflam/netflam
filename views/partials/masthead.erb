@@ -1,7 +1,15 @@
 <nav class="masthead inline grid">
     <div class="col-1">
         <a href="/"><img class="left" src="/assets/images/shortcuts/16.png" alt="netflam" /></a>
-        <div class="led inline"></div>
+    <% if session[:auth] %>
+        <a href="/notifications">
+        <% if Netflam::Notification.any(session[:user].id) %>
+            <div class="led inline active"></div>
+        <% else %>
+            <div class="led inline"></div>
+        <% end %>
+        </a>
+    <% end %>
     </div>
     <div class="col-6">
         <ul class="inline left">
