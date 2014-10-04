@@ -120,6 +120,14 @@ Start an IRB shell with the netflam environment loaded.
 $ sudo rake console
 ```
 
+### Quality
+
+Run cane to check quality metrics.
+
+```bash
+$ sudo rake quality
+```
+
 ## Dependencies
 
 - Ruby (>= 1.9.0)
@@ -131,6 +139,7 @@ $ sudo rake console
   * tilt
   * redcarpet
   * pygments
+  * cane
 - Javascript
   * jquery.js
   * sifter.js
