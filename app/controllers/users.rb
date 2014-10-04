@@ -14,7 +14,8 @@ class Netflam
               render("settings")
             end
 
-            # post /u/:username/settings (email, username, password, realname)
+            # post /u/:username/settings (email, username,
+            #                             password, realname, bio)
             # -------------------------------------------------------------- */
             on post, param("email"), param("username"), param("password"), param("realname"), param("bio") do |email, username, password, realname, bio|
               session[:user].email = email
