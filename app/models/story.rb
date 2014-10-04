@@ -1,3 +1,8 @@
+# STORY MODEL                                                               ---
+#
+# Version:                                 models/story.rb    0.0.1    04/10/14
+# Authors:              Maciej A. Czyzewski, <maciejanthonyczyzewski@gmail.com>
+
 class Story < ActiveRecord::Base
   belongs_to :user
 

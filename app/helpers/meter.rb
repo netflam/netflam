@@ -1,3 +1,8 @@
+# METER                                  An implementation of meter classifier.
+#
+# Version:                                helpers/meter.rb    0.0.1    04/10/14
+# Authors:              Maciej A. Czyzewski, <maciejanthonyczyzewski@gmail.com>
+
 class Netflam
   module Meter
     @votes  = :votes

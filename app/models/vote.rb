@@ -1,3 +1,8 @@
+# VOTE MODEL                                                                ---
+#
+# Version:                                  models/vote.rb    0.0.1    04/10/14
+# Authors:              Maciej A. Czyzewski, <maciejanthonyczyzewski@gmail.com>
+
 class Vote < ActiveRecord::Base
   belongs_to :story
   belongs_to :user

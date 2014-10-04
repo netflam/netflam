@@ -1,3 +1,8 @@
+# RENDER                                                Markdown and templates.
+#
+# Version:                               helpers/render.rb    0.0.1    04/10/14
+# Authors:              Maciej A. Czyzewski, <maciejanthonyczyzewski@gmail.com>
+
 class Netflam
   module Render
     def self.setup(app)

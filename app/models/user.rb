@@ -1,3 +1,8 @@
+# USER MODEL                                                                ---
+#
+# Version:                                  models/user.rb    0.0.1    04/10/14
+# Authors:              Maciej A. Czyzewski, <maciejanthonyczyzewski@gmail.com>
+
 class User < ActiveRecord::Base
   has_many :stories, dependent: :destroy
 

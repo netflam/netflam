@@ -1,3 +1,12 @@
+# BASE                                                                      ---
+#
+# Version:                                 helpers/base.rb    0.0.1    04/10/14
+# Authors:              Maciej A. Czyzewski, <maciejanthonyczyzewski@gmail.com>
+#
+# Fixes:
+#      M. A. Czyzewski :   Some small cleanups, optimizations, and fixed a
+#                  param() bug.
+
 class Netflam
   class Response
     attr_accessor :status

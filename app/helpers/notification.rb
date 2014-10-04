@@ -1,3 +1,8 @@
+# NOTIFICATION                                                              ---
+#
+# Version:                         helpers/notification.rb    0.0.1    04/10/14
+# Authors:              Maciej A. Czyzewski, <maciejanthonyczyzewski@gmail.com>
+
 class Netflam
   module Notification
     @notifications  = :notifications

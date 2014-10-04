@@ -1,3 +1,8 @@
+# COMMENT MODEL                                                             ---
+#
+# Version:                               models/comment.rb    0.0.1    04/10/14
+# Authors:              Maciej A. Czyzewski, <maciejanthonyczyzewski@gmail.com>
+
 class Comment < ActiveRecord::Base
   belongs_to :story
   belongs_to :user

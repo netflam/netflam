@@ -1,3 +1,8 @@
+# USERS CONTROLLER                                                          ---
+#
+# Version:                            controllers/users.rb    0.0.1    04/10/14
+# Authors:              Maciej A. Czyzewski, <maciejanthonyczyzewski@gmail.com>
+
 class Netflam
   module Controller
     class Users < Netflam; end

@@ -1,3 +1,8 @@
+# INDEX CONTROLLER                                                          ---
+#
+# Version:                            controllers/index.rb    0.0.1    04/10/14
+# Authors:              Maciej A. Czyzewski, <maciejanthonyczyzewski@gmail.com>
+
 class Netflam
   module Controller
     class Index < Netflam; end
