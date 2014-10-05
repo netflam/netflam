@@ -163,7 +163,8 @@ $ sudo rake quality
 - [ ] help
 - [ ] user profile (with karma, comments)
 - [ ] cache gravatars
-- [ ] notifications (mention, comments)
+- [ ] mentions
+- [x] notifications
 - [x] activity
 - [x] comments
 - [x] pagination
