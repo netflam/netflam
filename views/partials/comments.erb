@@ -1,11 +1,7 @@
 <ol class="comments">
 <% for comment in @comments %>
     <span class="link">
-    <% unless comment.story.url.nil? || comment.story.url == '' %>
-        <a href="<%= comment.story.url %>"><%= comment.story.description %></a>
-    <% else %>
         <a href="/s/<%= comment.story.id.to_s(32) %>/<%= comment.story.description.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>"><%= comment.story.description %></a>
-    <% end %>
     </span>
     <li data-id="<%= comment.id.to_s(32) %>">
         <div class="col-9 md">
