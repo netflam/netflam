@@ -162,6 +162,7 @@ $ sudo rake quality
 - [ ] join using **twitter** or **github**
 - [ ] help
 - [ ] user profile (with karma, comments)
+- [ ] cache gravatars
 - [ ] notifications (mention, comments)
 - [x] activity
 - [x] comments
