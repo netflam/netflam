@@ -12,10 +12,12 @@
             domain: "month",
             subDomain: "day",
             data: <%= @statistics.to_json %>,
-            tooltip: true,
             onClick: function(date, nb) {
+                var format = d3.time.format("%A %B %d, %Y");
+
                 $("#cal-heatmap-placeholder").html("<b>" +
-                    (nb === null ? 0 : nb) + "</b> activities"
+                    (nb === null ? 0 : nb) + "</b> activities, " +
+                    format(new Date(date))
                 );
             }
         });
