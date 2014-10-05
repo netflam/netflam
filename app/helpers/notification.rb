@@ -7,8 +7,13 @@ class Netflam
   module Notification
     @notifications  = :notifications
 
+    @types = {
+      'V' => 'new vote',
+      'C' => 'new comment'
+    }
+
     class << self
-      def save(user_id, story_id)
+      def save(user_id, story_id, type)
         story = Story.find(story_id)
         users = Array.new
 
@@ -24,8 +29,11 @@ class Netflam
         unless users.nil?
           users.each do |user_id|
             list = Netflam::Notification.notify(user_id)
-            puts list
-            $redis.hset(@notifications.to_s, user_id, list.push(story_id).to_s)
+            $redis.hset(
+              @notifications.to_s,
+              user_id,
+              list.push(story_id.to_s + type).to_s
+            )
           end
         end
       end
@@ -54,6 +62,10 @@ class Netflam
         else
           []
         end
+      end
+
+      def type(letters)
+        @types[letters]
       end
 
       def destroy(user_id)

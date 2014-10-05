@@ -9,7 +9,7 @@ class Comment < ActiveRecord::Base
 
   validates :extended, length: { minimum: 2 }, presence: true
 
-  after_save :notifications_save
+  after_save :comments_save
 
   def self.recent
     order("created_at DESC")
@@ -20,7 +20,7 @@ class Comment < ActiveRecord::Base
   end
 
   private
-    def notifications_save
-      Netflam::Notification.save(user_id, story_id)
+    def comments_save
+      Netflam::Notification.save(user_id, story_id, 'C')
     end
 end

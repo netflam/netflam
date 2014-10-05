@@ -862,6 +862,10 @@ ol.notifications {
   text-decoration: none;
 }
 
+.notifications .left a {
+  text-decoration: none;
+}
+
 /* Tags
    ========================================================================= */
 

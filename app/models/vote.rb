@@ -13,6 +13,7 @@ class Vote < ActiveRecord::Base
   private
     def votes_save
       Netflam::Meter.save(story_id)
+      Netflam::Notification.save(user_id, story_id, 'V')
     end
 
     def votes_destroy
