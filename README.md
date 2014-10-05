@@ -157,13 +157,13 @@ $ sudo rake quality
 - [ ] KaTeX for math
 - [ ] better metatags (title, twitter, opengraph)
 - [ ] chrome/web widget (comments)
-- [ ] search engine
 - [ ] tags
 - [ ] join using **twitter** or **github**
 - [ ] help
 - [ ] user profile (with karma, comments)
 - [ ] cache gravatars
 - [ ] mentions
+- [x] search engine
 - [x] notifications
 - [x] activity
 - [x] comments

@@ -25,30 +25,7 @@
     </script>
 
     <h2 class="ta">Notifications</h2>
-    <ol class="notifications">
-<% unless @notifications.nil? || @notifications.count == 0  %>
-    <% for notification in @notifications %>
-    <% notification = notification.scan(/\d+|\D+/) %>
-    <% story = Story.find(notification[0].to_i) %>
-        <li>
-            <div class="left">
-                <span class="link">
-                    <a href="/s/<%= notification[0].to_i.to_s(32) %>"><%= story.description %></a>
-                </span>
-                by
-                <a href="/u/<%= story.user.username %>"><%= story.user.username %></a>
-            </div>
-            <div class="right">
-                <%= Netflam::Notification.type(notification[1]) %>
-            </div>
-        </li>
-    <% end %>
-    </ol>
-<% else %>
-    <div class="box">
-        Nothing to show!
-    </div>
-<% end %>
+    <%= partial 'partials/notifications' %>
 </div>
 
 <%= partial 'partials/footer' %>

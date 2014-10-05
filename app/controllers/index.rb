@@ -76,9 +76,9 @@ class Netflam
         end
       end
 
-      # get /notifications
+      # get /activity
       # -------------------------------------------------------------------- */
-      on "notifications" do
+      on "activity" do
         @notifications = Netflam::Notification.notify(session[:user].id)
         @statistics = Hash.new(0)
 
@@ -96,13 +96,31 @@ class Netflam
 
         Netflam::Notification.destroy(session[:user].id)
 
-        render("notifications")
+        render("activity")
       end
 
       # get /search
       # -------------------------------------------------------------------- */
       on "search" do
-        res.write "not ready!"
+        # get /search?query=:query
+        # ------------------------------------------------------------------ */
+        on param("query", true) do |query|
+          @stories = Story.where("url LIKE ? OR description LIKE ? OR extended LIKE ?", "%#{query}%", "%#{query}%", "%#{query}%")
+          @stories = Netflam::Pagination.page(@stories, 1)
+
+          @comments = Comment.where("extended LIKE ?", "%#{query}%")
+          @comments = Netflam::Pagination.page(@comments, 1)
+
+          @pagination = false
+
+          render("search")
+        end
+
+        # get /search
+        # ------------------------------------------------------------------ */
+        on true do
+          render("search")
+        end
       end
 
       # get /terms

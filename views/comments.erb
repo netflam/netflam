@@ -3,6 +3,12 @@
 <div class="grid">
     <h2 class="ta">Comments</h2>
     <%= partial 'partials/comments' %>
+
+<% if @comments.nil? || @comments.count == 0  %>
+    <div class="box">
+        Nothing to show!
+    </div>
+<% end %>
 </div>
 
 <%= partial 'partials/footer' %>

@@ -2,7 +2,7 @@
     <div class="col-1">
         <a href="/"><img class="left" src="/assets/images/shortcuts/16.png" alt="netflam" /></a>
     <% if session[:auth] %>
-        <a href="/notifications">
+        <a href="/activity">
         <% if Netflam::Notification.any(session[:user].id) %>
             <div class="led inline active"></div>
         <% else %>

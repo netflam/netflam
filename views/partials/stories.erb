@@ -47,7 +47,7 @@
 <% end %>
 </ol>
 
-<% unless @stories.nil? || @stories.count == 0  %>
+<% unless @stories.nil? || @stories.count == 0 || defined? @pagination %>
     <% if Netflam::Pagination.prev(@stories) == 0 %>
         <b class="left">Prev</b>
     <% else %>

@@ -1,0 +1,20 @@
+<%= partial 'partials/masthead' %>
+
+<div class="grid">
+    <h2 class="ta">Search</h2>
+    <form accept-charset="UTF-8" action="/search" method="GET">
+        <input type="text" name="query" placeholder="Stories, comments..." /><br>
+    </form>
+
+    <% unless @stories.nil? || @stories.count == 0  %>
+        <h2 class="ta">Stories</h2>
+        <%= partial 'partials/stories' %>
+    <% end %>
+
+    <% unless @comments.nil? || @comments.count == 0  %>
+        <h2 class="ta">Comments</h2>
+        <%= partial 'partials/comments' %>
+    <% end %>
+</div>
+
+<%= partial 'partials/footer' %>
