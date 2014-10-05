@@ -12,8 +12,10 @@ class User < ActiveRecord::Base
 
   has_secure_password validations: true
 
-  validates :email, length: { minimum: 2 }, email: true, uniqueness: true
-  validates :username, length: { minimum: 2 }, uniqueness: true
+  validates :email, length: { minimum: 2 }, email: true,
+                    uniqueness: { case_sensitive: false }
+  validates :username, length: { minimum: 2 },
+                       uniqueness: { case_sensitive: false }
   validates :password, length: { in: 6..20 }, presence: true, :on => :create
   validates :realname, length: { minimum: 2 }, presence: true
   validates :bio, length: { maximum: 500 }, presence: false
