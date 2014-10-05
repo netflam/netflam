@@ -1,8 +1,8 @@
 <%= partial 'partials/masthead' %>
 
 <div class="grid">
-    <h1>Edit a story</h1>
-    <p>Remember that the changes were not too big. For large changes better idea is to write a new one.</p>
+    <h2 class="ta">Edit a story</h2>
+    <p class="ta">Remember that the changes were not too big. For large changes better idea is to write a new one.</p>
 <% unless @errors.nil? || @errors == 0 %>
     <div class="box red">
     <% @errors.each_pair do |key, value| %>

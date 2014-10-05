@@ -1,8 +1,8 @@
 <%= partial 'partials/masthead' %>
 
 <div class="grid">
-    <h1>Update your profile</h1>
-    <p>Feel free. Use markdown to describe yourself. Try to provide true information.</p>
+    <h2 class="ta">Update your profile</h2>
+    <p class="ta">Feel free. Use markdown to describe yourself. Try to provide true information.</p>
 <% unless @errors.nil? || @errors == 0 %>
     <div class="box red">
     <% @errors.each_pair do |key, value| %>

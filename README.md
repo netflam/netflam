@@ -163,6 +163,7 @@ $ sudo rake quality
 - [ ] help
 - [ ] user profile (with karma, comments)
 - [ ] notifications (mention, comments)
+- [x] activity
 - [x] comments
 - [x] pagination
 - [x] about page

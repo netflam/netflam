@@ -1,6 +1,27 @@
 <%= partial 'partials/masthead' %>
 
 <div class="grid">
+    <h2 class="ta">Activity</h2>
+    <div id="cal-heatmap"></div>
+    <div id="cal-heatmap-placeholder"></div>
+
+    <script type="text/javascript">
+        var cal = new CalHeatMap();
+        cal.init({
+            range: 12,
+            domain: "month",
+            subDomain: "day",
+            data: <%= @statistics.to_json %>,
+            tooltip: true,
+            onClick: function(date, nb) {
+                $("#cal-heatmap-placeholder").html("<b>" +
+                    (nb === null ? 0 : nb) + "</b> activities"
+                );
+            }
+        });
+    </script>
+
+    <h2 class="ta">Notifications</h2>
     <ol class="notifications">
 <% unless @notifications.nil? || @notifications.count == 0  %>
     <% for notification in @notifications %>

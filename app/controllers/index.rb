@@ -80,6 +80,19 @@ class Netflam
       # -------------------------------------------------------------------- */
       on "notifications" do
         @notifications = Netflam::Notification.notify(session[:user].id)
+        @statistics = Hash.new(0)
+
+        session[:user].stories.each do |story|
+          @statistics[story.created_at.to_time.to_i] += 1
+        end
+
+        session[:user].comments.each do |comment|
+          @statistics[comment.created_at.to_time.to_i] += 1
+        end
+
+        session[:user].votes.each do |vote|
+          @statistics[vote.created_at.to_time.to_i] += 1
+        end
 
         Netflam::Notification.destroy(session[:user].id)
 
