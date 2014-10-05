@@ -8,6 +8,7 @@
     <script type="text/javascript">
         var cal = new CalHeatMap();
         cal.init({
+            start: new Date(<%= (Time.now - 28927200).to_json %>),
             range: 12,
             domain: "month",
             subDomain: "day",
