@@ -1,6 +1,6 @@
 <%= partial 'partials/masthead' %>
 
-<div class="grid">
+<div class="grid" itemscope itemtype="http://schema.org/Article">
     <ol class="stories">
         <li data-id="<%= @story.id.to_s(32) %>">
             <div class="meter col-1">
@@ -8,11 +8,11 @@
                 <div class="score <%= Meter.type(@story.id) %>"><%= Meter.score(@story.id) %></div>
             </div>
             <div class="details col-10">
-                <span class="link">
+                <span class="link" itemprop="name">
                 <% unless @story.url.nil? || @story.url == '' %>
-                    <a href="<%= @story.url %>"><%= @story.description %></a>
+                    <a href="<%= @story.url %>" itemprop="url"><%= @story.description %></a>
                 <% else %>
-                    <a href="/s/<%= @story.id.to_s(32) %>/<%= @story.description.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>"><%= @story.description %></a>
+                    <a href="/s/<%= @story.id.to_s(32) %>/<%= @story.description.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>" itemprop="url"><%= @story.description %></a>
                 <% end %>
                 </span>
                 <span class="tags">
@@ -22,7 +22,7 @@
                 </span>
                 <span class="domain"><%= URI(@story.url).host %></span>
             <% unless @story.extended.nil? || @story.extended == '' %>
-                <div class="extended md">
+                <div class="extended md" itemprop="description">
                     <%= Netflam::Markdown.render(@story.extended) %>
                 </div>
             <% end %>
@@ -31,7 +31,7 @@
                     •
                     <label title="<%= @story.created_at %>"><%= Netflam::Functions.ago(@story.created_at.to_i) %></label>
                     by
-                    <a href="/u/<%= @story.user.username %>"><%= @story.user.username %></a>
+                    <a href="/u/<%= @story.user.username %>" itemprop="author"><%= @story.user.username %></a>
                 <% if session[:user] == @story.user %>
                     •
                     <a href="/s/<%= @story.id.to_s(32) %>/edit" class="edit">edit</a>
