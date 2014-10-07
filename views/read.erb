@@ -17,7 +17,7 @@
                 </span>
                 <span class="tags">
                 <% for tag in @story.tags %>
-                    <a href="/t/<%= tag.name %>" class="tag" id="<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>
+                    <a href="/t/<%= tag.name %>" class="tag" id="<%= tag.name %>" title="<%= tag.name %>" itemprop="about"><%= tag.name %></a>
                 <% end %>
                 </span>
                 <span class="domain"><%= URI(@story.url).host %></span>
