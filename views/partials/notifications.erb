@@ -1,7 +1,7 @@
 <ol class="notifications">
 <% unless @notifications.nil? || @notifications.count == 0  %>
     <% for notification in @notifications %>
-        <% notification = notification.scan(/\d+|\D+/) %>
+        <% notification = notification.to_s.scan(/\d+|\D+/) %>
         <% story = Story.find(notification[0].to_i) %>
         <li>
             <div class="left">
