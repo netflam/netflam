@@ -580,10 +580,9 @@ textarea {
 /* Buttons
    ========================================================================= */
 
-.button {
+.button, a.button {
   background-color: transparent;
   border: 3px solid #34495e;
-  /* border-radius: 2px; */
   color: #34495e;
   cursor: pointer;
   text-decoration: none;
