@@ -91,18 +91,22 @@
 </div>
 <% end %>
 
-<% if session[:auth] %>
 <div class="grid">
     <div class="col-1"></div>
     <div class="col-10">
+    <% if session[:auth] %>
         <form accept-charset="UTF-8" action="/c/new" method="POST">
             <input type="hidden" name="id" value="<%= @story.id.to_s(32) %>">
             <textarea name="extended" placeholder="Extended (markdown: on)" style="height: 55px;"></textarea>
             <button class="button">New</button>
         </form>
+    <% else %>
+        <div class="box">
+            You have to be logged in to comment.
+        </div>
+    <% end %>
     </div>
     <div class="col-1"></div>
 </div>
-<% end %>
 
 <%= partial 'partials/footer' %>
