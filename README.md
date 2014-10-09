@@ -12,7 +12,7 @@
 ---
 
 <div align="center">
-  <img src="https://dl.dropboxusercontent.com/u/103345209/Screenshots/Screenshot%202014-09-14%2018.22.57.png"/>
+  <img src="https://dl.dropboxusercontent.com/u/103345209/Screenshots/Screenshot%202014-10-09%2018.32.55.png"/>
 </div>
 
 #### About
