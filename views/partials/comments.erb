@@ -26,6 +26,8 @@
 </ol>
 
 <% unless @comments.nil? || @comments.count == 0 || defined? @pagination == nil %>
+<div>
+    <br>
     <% if Netflam::Pagination.prev(@comments) == 0 %>
         <b class="left">Prev</b>
     <% else %>
@@ -35,5 +37,7 @@
         <a href="?page=<%= Netflam::Pagination.next(@comments) %>" class="right">Next</a>
     <% else %>
         <b class="right">Next</b>
+        <div class="center ta gg">(last page)</div>
     <% end %>
+</div>
 <% end %>

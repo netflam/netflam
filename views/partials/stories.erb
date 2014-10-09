@@ -48,6 +48,8 @@
 </ol>
 
 <% unless @stories.nil? || @stories.count == 0 || defined? @pagination %>
+<div>
+    <br>
     <% if Netflam::Pagination.prev(@stories) == 0 %>
         <b class="left">Prev</b>
     <% else %>
@@ -57,5 +59,7 @@
         <a href="?page=<%= Netflam::Pagination.next(@stories) %>" class="right">Next</a>
     <% else %>
         <b class="right">Next</b>
+        <div class="center ta gg">(last page)</div>
     <% end %>
+</div>
 <% end %>
