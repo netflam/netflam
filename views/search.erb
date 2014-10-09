@@ -3,7 +3,7 @@
 <div class="grid">
     <h2 class="ta">Search</h2>
     <form accept-charset="UTF-8" action="/search" method="GET">
-        <input type="text" name="query" placeholder="Stories, comments..." /><br>
+        <input type="text" name="query" value="<%= @query %>" placeholder="Stories, comments..." /><br>
     </form>
 
     <% unless @stories.nil? || @stories.count == 0  %>

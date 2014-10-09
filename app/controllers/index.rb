@@ -111,6 +111,7 @@ class Netflam
           @comments = Comment.where("extended LIKE ?", "%#{query}%")
           @comments = Netflam::Pagination.page(@comments, 1)
 
+          @query = query
           @pagination = false
 
           render("search")
