@@ -45,7 +45,7 @@ class Netflam
             # get /c/:id/edit
             # -------------------------------------------------------------- */
             on get do
-              render("comment")
+              render("comment", { :title => "comment" })
             end
 
             # post /c/:id/edit (extended)
@@ -57,7 +57,7 @@ class Netflam
               if comment.valid? == false
                 @errors = comment.errors.messages
                 comment = @comment
-                render("comment")
+                render("comment", { :title => "comment" })
               else
                 comment.save
                 res.redirect "/s/" + @comment.story.id.to_s(32) + "#" + @comment.id.to_s(32)

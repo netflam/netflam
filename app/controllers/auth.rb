@@ -12,7 +12,7 @@ class Netflam
         # get /a/join
         # ------------------------------------------------------------------ */
         on get do
-          render("join")
+          render("join", { :title => "join" })
         end
 
         # post /a/join (email, username, password, realname)
@@ -26,7 +26,7 @@ class Netflam
 
           if user.valid? == false
             @errors = user.errors.messages
-            render("join")
+            render("join", { :title => "join" })
           else
             user.save
             res.redirect "/a/login/ready"
@@ -38,8 +38,8 @@ class Netflam
         # get /a/login/ready
         # ------------------------------------------------------------------ */
         on "ready" do
-          @success = {you: ["have been successfully registered"]}
-          render("login")
+          @success = { you: ["have been successfully registered"] }
+          render("login", { :title => "login" })
         end
 
         # post /a/login (email, password)
@@ -53,19 +53,19 @@ class Netflam
               session[:user] = user
               res.redirect "/"
             else
-              @errors = {password: ["is incorrect"]}
-              render("login")
+              @errors = { password: ["is incorrect"] }
+              render("login", { :title => "login" })
             end
           else
-            @errors = {email: ["is incorrect"]}
-            render("login")
+            @errors = { email: ["is incorrect"] }
+            render("login", { :title => "login" })
           end
         end
 
         # get /a/login
         # ------------------------------------------------------------------ */
         on true do
-          render("login")
+          render("login", { :title => "login" })
         end
       end
 

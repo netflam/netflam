@@ -18,7 +18,7 @@ class Netflam
           @stories = Story.find(hot).sort_by! {|s| hot.index s[:id]}
           # @stories = Netflam::Pagination.page(@stories, page)
 
-          render("index")
+          render("index", { :title => "popular" })
         end
 
         # get /
@@ -41,7 +41,7 @@ class Netflam
           @stories = Story.recent
           @stories = Netflam::Pagination.page(@stories, page)
 
-          render("recent")
+          render("recent", { :title => "recent" })
         end
 
         # get /recent
@@ -50,7 +50,7 @@ class Netflam
           @stories = Story.recent
           @stories = Netflam::Pagination.page(@stories, 1)
 
-          render("recent")
+          render("recent", { :title => "recent" })
         end
       end
 
@@ -63,7 +63,7 @@ class Netflam
           @comments = Comment.recent
           @comments = Netflam::Pagination.page(@comments, page)
 
-          render("comments")
+          render("comments", { :title => "comments" })
         end
 
         # get /comments
@@ -72,7 +72,7 @@ class Netflam
           @comments = Comment.recent
           @comments = Netflam::Pagination.page(@comments, 1)
 
-          render("comments")
+          render("comments", { :title => "comments" })
         end
       end
 
@@ -96,7 +96,7 @@ class Netflam
 
         Netflam::Notification.destroy(session[:user].id)
 
-        render("activity")
+        render("activity", { :title => "activity" })
       end
 
       # get /search
@@ -114,26 +114,26 @@ class Netflam
           @query = query
           @pagination = false
 
-          render("search")
+          render("search", { :title => "search" })
         end
 
         # get /search
         # ------------------------------------------------------------------ */
         on true do
-          render("search")
+          render("search", { :title => "search" })
         end
       end
 
       # get /terms
       # -------------------------------------------------------------------- */
       on "terms" do
-        render("terms")
+        render("terms", { :title => "terms" })
       end
 
       # get /about
       # -------------------------------------------------------------------- */
       on "about" do
-        render("about")
+        render("about", { :title => "about" })
       end
     end
   end

@@ -12,7 +12,7 @@ class Netflam
         # get /s/new
         # ------------------------------------------------------------------ */
         on get do
-          render("new")
+          render("new", { :title => "new" })
         end
 
         # post /s/new (url, description, extended, tags)
@@ -31,7 +31,7 @@ class Netflam
 
           if story.valid? == false
             @errors = story.errors.messages
-            render("new")
+            render("new", { :title => "new" })
           else
             session[:user].stories << story
             res.redirect "/recent"
@@ -67,7 +67,7 @@ class Netflam
             # get /s/:id/edit
             # -------------------------------------------------------------- */
             on get do
-              render("story")
+              render("story", { :title => "story" })
             end
 
             # post /s/:id/edit (url, description, extended, tags)
@@ -88,7 +88,7 @@ class Netflam
               if story.valid? == false
                 @errors = story.errors.messages
                 story = @story
-                render("story")
+                render("story", { :title => "story" })
               else
                 story.save
                 res.redirect "/s/" + @story.id.to_s(32)
@@ -99,7 +99,7 @@ class Netflam
           # get /s/:id
           # ---------------------------------------------------------------- */
           on true do
-            render("read")
+            render("read", { :title => @story.description })
           end
         end
       end

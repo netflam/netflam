@@ -16,7 +16,7 @@ class Netflam
             # get /u/:username/settings
             # -------------------------------------------------------------- */
             on get do
-              render("settings")
+              render("settings", { :title => "settings" })
             end
 
             # post /u/:username/settings (email, username,
@@ -31,10 +31,10 @@ class Netflam
               if session[:user].valid? == false
                 @errors = session[:user].errors.messages
                 session[:user] = User.find(session[:user].id)
-                render("settings")
+                render("settings", { :title => "settings" })
               else
                 session[:user].save
-                render("settings")
+                render("settings", { :title => "settings" })
               end
             end
           end
@@ -49,7 +49,7 @@ class Netflam
               @stories = @user.stories.recent
               @stories = Netflam::Pagination.page(@stories, page)
 
-              render("profile")
+              render("profile", { :title => @user.username })
             end
 
             # get /u/:username
@@ -58,7 +58,7 @@ class Netflam
               @stories = @user.stories.recent
               @stories = Netflam::Pagination.page(@stories, 1)
 
-              render("profile")
+              render("profile", { :title => @user.username })
             end
           end
         end

@@ -10,6 +10,7 @@ class Netflam
       app.settings[:render][:engine]  ||= "erb"
       app.settings[:render][:layout]  ||= "layout"
       app.settings[:render][:views]   ||= File.expand_path("views", Dir.pwd)
+      app.settings[:render][:title]   ||= "netflam, your hackerspace"
       app.settings[:render][:options] ||= {
         default_encoding: Encoding.default_external,
         ugly:             true
@@ -17,6 +18,12 @@ class Netflam
     end
 
     def render(template, locals = {}, layout = settings[:render][:layout])
+      if locals.has_key?(:title)
+        locals[:title] = locals[:title] + ' - netflam'
+      else
+        locals[:title] = settings[:render][:title]
+      end
+
       res.write(view(template, locals, layout))
     end
 

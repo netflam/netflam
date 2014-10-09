@@ -17,7 +17,7 @@ class Netflam
           @stories = Story.joins(:tags).where(tags: {name: [name]}).recent
           @stories = Netflam::Pagination.page(@stories, page)
 
-          render("tag")
+          render("tag", { :title => name })
         end
 
         # get /t/:name
@@ -26,7 +26,7 @@ class Netflam
           @stories = Story.joins(:tags).where(tags: {name: [name]}).recent
           @stories = Netflam::Pagination.page(@stories, 1)
 
-          render("tag")
+          render("tag", { :title => name })
         end
       end
     end
