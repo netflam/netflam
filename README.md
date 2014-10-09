@@ -144,6 +144,7 @@ $ sudo rake quality
   * jquery.js
   * sifter.js
   * selectize.js
+  * d3.js
 - Nginx
 - Sqlite3
 - Redis
