@@ -3,6 +3,8 @@
 # Version:                            helpers/functions.rb    0.0.1    04/10/14
 # Authors:              Maciej A. Czyzewski, <maciejanthonyczyzewski@gmail.com>
 
+require "redcarpet/render_strip"
+
 class Netflam
   module Functions
     class << self
@@ -32,6 +34,30 @@ class Netflam
             when 525961..1051920 then 'about 1 year ago'
           else                      "over #{(distance_in_minutes / 525600).round} years ago"
         end
+      end
+
+      # I'm not suggesting this is particularly sane, but it works.
+      #
+      # The little bit of regex fixes cases where two paragraphs get squished
+      # together and you end up with the unsightly
+      #
+      #   "end of sentence.New sentence"
+      #
+      # when you want
+      #
+      #   "end of sentence. New sentence"
+      #
+      # (I'm sure there are *loads* of edge-cases it will break on, but
+      # this sort of handles some common cases, including various bits of
+      # punctuation.)
+      def truncate(extended, len = 20, ellipsis = "...")
+          markdown  = Redcarpet::Markdown.new(Redcarpet::Render::StripDown)
+          content   = markdown.render(extended).split " "
+          truncated = content[0...len]
+
+          truncated.join(" ").gsub(/([a-z])(\.|[\.\?\!]?[\'|\"]|\!|\?)([A-Z])/) {
+              "#{$1}#{$2} #{$3}"
+          } << ( content.size > len ? ellipsis : "" )
       end
     end
   end
