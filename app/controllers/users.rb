@@ -43,6 +43,20 @@ class Netflam
           # get /u/:username
           # ---------------------------------------------------------------- */
           on true do
+            @statistics = Hash.new(0)
+
+            @user.stories.each do |story|
+              @statistics[story.created_at.to_time.to_i] += 1
+            end
+
+            @user.comments.each do |comment|
+              @statistics[comment.created_at.to_time.to_i] += 1
+            end
+
+            @user.votes.each do |vote|
+              @statistics[vote.created_at.to_time.to_i] += 1
+            end
+
             # get /u/:username?page=:page
             # -------------------------------------------------------------- */
             on param("page", true) do |page|

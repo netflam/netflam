@@ -15,6 +15,37 @@
                 <img class="right" src="https://secure.gravatar.com/avatar/<%= Digest::MD5.hexdigest(@user.email) %>?s=128&amp;d=identicon" alt="<%= @user.username %>" itemprop="image" />
             </a>
         </div>
+        <div class="col-12">
+            <hr>
+
+            <div class="ta">
+                <b><%= @statistics.count %></b> activities | <b><%= Meter.karma(@user.id).to_i %></b> karma | <b><%= @user.stories.count %></b> stories
+            </div>
+
+            <br>
+
+            <div id="cal-heatmap"></div>
+            <div id="cal-heatmap-placeholder"></div>
+
+            <script type="text/javascript">
+                var cal = new CalHeatMap();
+                cal.init({
+                    start: new Date(<%= (Time.now - 28927200).to_json %>),
+                    range: 12,
+                    domain: "month",
+                    subDomain: "day",
+                    data: <%= @statistics.to_json %>,
+                    onClick: function(date, nb) {
+                        var format = d3.time.format("%A %B %d, %Y");
+
+                        $("#cal-heatmap-placeholder").html("<b>" +
+                            (nb === null ? 0 : nb) + "</b> activities, " +
+                            format(new Date(date))
+                        );
+                    }
+                });
+            </script>
+        </div>
     </div>
     <hr>
 
