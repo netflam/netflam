@@ -105,7 +105,7 @@ class Netflam
             <meta name="twitter:site" content="@netflam" />
             <meta name="twitter:title" content="' + @story.description + ' - netflam" />
             <meta name="twitter:description" content="' + @story.description + '" />
-            <meta name="twitter:image" content="https://secure.gravatar.com/avatar/' + Digest::MD5.hexdigest(@story.user.email) + '?s=128&d=identicon" />
+            <meta name="twitter:image" content="https://secure.gravatar.com/avatar/' + Digest::MD5.hexdigest(@story.user.email) + '?s=64&d=identicon" />
             <meta name="twitter:url" content="https://netflam.com/s/' + @story.id.to_s(32) + '/' + @story.description.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') + '" />
 
             <!-- Facebook -->
@@ -113,7 +113,7 @@ class Netflam
             <meta property="og:site_name" content="netflam, your hackerspace"/>
             <meta property="og:title" content="' + @story.description + ' - netflam"/>
             <meta property="og:description" content="' + @story.description + '" />
-            <meta property="og:image" content="https://secure.gravatar.com/avatar/' + Digest::MD5.hexdigest(@story.user.email) + '?s=128&d=identicon" />
+            <meta property="og:image" content="https://secure.gravatar.com/avatar/' + Digest::MD5.hexdigest(@story.user.email) + '?s=64&d=identicon" />
             <meta property="og:url" content="https://netflam.com/s/' + @story.id.to_s(32) + '/' + @story.description.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') + '" />
             '
 
