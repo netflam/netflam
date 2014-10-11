@@ -115,7 +115,7 @@ class Netflam
             <meta property="og:url" content="https://netflam.com/s/' + @story.id.to_s(32) + '/' + @story.description.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') + '" />
             '
 
-            render("read", { :title => @story.description, :meta => meta })
+            render("read", { :title => @story.description + ' - story', :meta => meta })
           end
         end
       end

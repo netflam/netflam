@@ -63,7 +63,7 @@ class Netflam
               @stories = @user.stories.recent
               @stories = Netflam::Pagination.page(@stories, page)
 
-              render("profile", { :title => @user.username })
+              render("profile", { :title => @user.username + ' - user' })
             end
 
             # get /u/:username
@@ -72,7 +72,7 @@ class Netflam
               @stories = @user.stories.recent
               @stories = Netflam::Pagination.page(@stories, 1)
 
-              render("profile", { :title => @user.username })
+              render("profile", { :title => @user.username + ' - user' })
             end
           end
         end

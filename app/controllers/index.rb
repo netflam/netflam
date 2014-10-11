@@ -114,7 +114,7 @@ class Netflam
           @query = query
           @pagination = false
 
-          render("search", { :title => @query })
+          render("search", { :title => @query + ' - search' })
         end
 
         # get /search
