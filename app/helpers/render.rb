@@ -24,6 +24,12 @@ class Netflam
         locals[:title] = settings[:render][:title]
       end
 
+      if locals.has_key?(:meta)
+        locals[:meta] = locals[:meta]
+      else
+        locals[:meta] = ''
+      end
+
       res.write(view(template, locals, layout))
     end
 

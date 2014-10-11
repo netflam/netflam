@@ -99,7 +99,23 @@ class Netflam
           # get /s/:id
           # ---------------------------------------------------------------- */
           on true do
-            render("read", { :title => @story.description })
+            meta = '
+            <!-- Twitter -->
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:site" content="@netflam" />
+            <meta name="twitter:title" content="' + @story.description + ' - netflam" />
+            <meta name="twitter:description" content="' + @story.description + '" />
+            <meta name="twitter:url" content="https://netflam.com/s/' + @story.id.to_s(32) + '/' + @story.description.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') + '" />
+
+            <!-- Facebook -->
+            <meta property="og:type" content="article" />
+            <meta property="og:site_name" content="netflam, your hackerspace"/>
+            <meta property="og:title" content="' + @story.description + ' - netflam"/>
+            <meta property="og:description" content="' + @story.description + '" />
+            <meta name="og:url" content="https://netflam.com/s/' + @story.id.to_s(32) + '/' + @story.description.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') + '" />
+            '
+
+            render("read", { :title => @story.description, :meta => meta })
           end
         end
       end

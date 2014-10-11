@@ -156,13 +156,13 @@ $ sudo rake quality
 - [ ] list of projects and members at **github** (netflammers)
 - [ ] API
 - [ ] KaTeX for math
-- [ ] better metatags (title, twitter, opengraph)
 - [ ] chrome/web widget (comments)
 - [ ] tags
 - [ ] join using **twitter** or **github**
 - [ ] help
 - [ ] cache gravatars
 - [ ] mentions
+- [x] better metatags (title, twitter, opengraph)
 - [x] user profile (with karma, comments)
 - [x] search engine
 - [x] notifications
