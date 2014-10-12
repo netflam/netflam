@@ -878,6 +878,10 @@ ol.notifications {
   background: #ecf0f1;
 }
 
+.tag.big {
+  font-size: 18px;
+}
+
 .tag#meta {
   border: 2px solid #2ecc71;
   background: none;
