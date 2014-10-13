@@ -14,8 +14,8 @@ class Netflam
         # get /?page=:page
         # ------------------------------------------------------------------ */
         on param("page", true) do |page|
-          hot      = Meter.top(0, 100)
-          @stories = Story.find(hot).sort_by! {|s| hot.index s[:id]}
+          hot      = Meter.top(0, 100).collect { |i| i.to_i }
+          @stories = Story.find(hot).sort_by { |u| hot.index(u.id) }
           # @stories = Netflam::Pagination.page(@stories, page)
 
           render("index", { :title => "popular" })
@@ -24,8 +24,8 @@ class Netflam
         # get /
         # ------------------------------------------------------------------ */
         on true do
-          hot      = Meter.top(0, 100)
-          @stories = Story.find(hot).sort_by! {|s| hot.index s[:id]}
+          hot      = Meter.top(0, 100).collect { |i| i.to_i }
+          @stories = Story.find(hot).sort_by { |u| hot.index(u.id) }
           # @stories = Netflam::Pagination.page(@stories, 1)
 
           render("index")
