@@ -18,6 +18,8 @@
         <div class="col-12">
             <hr>
 
+            <h2 class="ta">Activity</h2>
+
             <div class="ta">
                 <b><%= @statistics.count %></b> activities | <b><%= Meter.karma(@user.id).to_i %></b> karma | <b><%= @user.stories.count %></b> stories
             </div>
@@ -48,6 +50,8 @@
         </div>
     </div>
     <hr>
+
+    <h2 class="ta">Stories</h2>
 
     <%= partial 'partials/stories' %>
 </div>

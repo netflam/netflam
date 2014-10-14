@@ -99,6 +99,7 @@ class Netflam
           # get /s/:id
           # ---------------------------------------------------------------- */
           on true do
+            description = 'by ' + @story.user.username
             meta = '
             <!-- Twitter -->
             <meta name="twitter:card" content="summary" />
@@ -115,7 +116,7 @@ class Netflam
             <meta property="og:url" content="https://netflam.com/s/' + @story.id.to_s(32) + '/' + @story.description.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') + '" />
             '
 
-            render("read", { :title => @story.description + ' - story', :meta => meta })
+            render("read", { :title => @story.description + ' - story', :description => description, :meta => meta })
           end
         end
       end

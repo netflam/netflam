@@ -8,6 +8,7 @@
 <head>
     <!-- Basic -->
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <meta name="robots" content="index, follow, archive" />
@@ -20,12 +21,12 @@
 
     <!-- Content -->
     <meta name="description" property="description"
-          content="A community where people can discuss and share interesting links, questions and timely events." />
+          content="<%= description ||= "A community where people can discuss and share interesting links, questions and timely events." %>" />
     <meta name="author" content="Maciej A. Czyzewski" />
 
-    <%= meta %>
+    <%= meta ||= "" %>
 
-    <title><%= title %></title>
+    <title><%= title ||= "netflam, your hackerspace" %></title>
 
     <!-- Shortcuts -->
     <link rel="shortcut icon" href="/assets/images/shortcuts/16.png" />

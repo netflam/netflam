@@ -2,6 +2,13 @@
 
 <div class="grid">
     <h2 class="ta">Activity</h2>
+
+    <div class="ta">
+        <b><%= @statistics.count %></b> activities | <b><%= Meter.karma(session[:user].id).to_i %></b> karma | <b><%= session[:user].stories.count %></b> stories
+    </div>
+
+    <br>
+
     <div id="cal-heatmap"></div>
     <div id="cal-heatmap-placeholder"></div>
 
