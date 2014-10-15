@@ -5,18 +5,25 @@
 
 class Netflam
   module Meter
-    @votes  = :votes
-    @users  = :users
+    @votes   = :votes
+    @users   = :users
+
+    @stream  = :stream
 
     class << self
       def save(story_id)
-        user_id = Story.find(story_id).user_id
+        story = Story.find(story_id)
+
+        user_id    = story.user_id
+        created_at = story.created_at
 
         score = Netflam::Meter.score(story_id)
         karma = Netflam::Meter.karma(user_id)
 
         $redis.zadd(@votes.to_s, score + 1, story_id)
         $redis.zadd(@users.to_s, karma + 1, user_id)
+
+        $redis.zadd(@stream.to_s, created_at.to_i / (12 * 60 * 60) + Math.log10(score + 1), story_id)
       end
 
       def destroy(story_id)
@@ -68,7 +75,7 @@ class Netflam
       end
 
       def top(a, b)
-        $redis.zrevrange(@votes.to_s, a, b)
+        $redis.zrevrange(@stream.to_s, a, b)
       end
     end
   end
