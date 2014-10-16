@@ -5,10 +5,12 @@
 
 class Netflam
   module Meter
-    @votes   = :votes
-    @users   = :users
+    # Story points & user karma
+    @votes = :votes
+    @users = :users
 
-    @stream  = :stream
+    # Dynamic stream
+    @score = :score
 
     class << self
       def save(story_id)
@@ -23,7 +25,7 @@ class Netflam
         $redis.zadd(@votes.to_s, score + 1, story_id)
         $redis.zadd(@users.to_s, karma + 1, user_id)
 
-        $redis.zadd(@stream.to_s, created_at.to_i / (12 * 60 * 60) + Math.log10(score + 1), story_id)
+        $redis.zadd(@score.to_s, created_at.to_i / (12 * 60 * 60) + Math.log10(score + 1), story_id)
       end
 
       def destroy(story_id)
@@ -49,12 +51,16 @@ class Netflam
         $redis.zscore(@users.to_s, user_id).to_i
       end
 
+      def top(a, b)
+        $redis.zrevrange(@score.to_s, a, b)
+      end
+
       def type(story_id)
-        # a b c d e f
         inta = $redis.zcard(@votes.to_s)
         rank = $redis.zrank(@votes.to_s, story_id)
         bttm = inta / 6
 
+        # Types: a b c d e f
         if rank != nil and inta != nil
           if rank.between?(0, bttm * 0.1)
             return "f"
@@ -72,10 +78,6 @@ class Netflam
         else
           return "a"
         end
-      end
-
-      def top(a, b)
-        $redis.zrevrange(@stream.to_s, a, b)
       end
     end
   end
