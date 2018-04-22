@@ -11,9 +11,9 @@
 
 ---
 
-<div align="center">
-  <img src="https://dl.dropboxusercontent.com/u/103345209/Screenshots/Screenshot%202014-10-09%2018.32.55.png"/>
-</div>
+![](netflam_1.png)
+![](netflam_2.png)
+![](netflam_3.png)
 
 #### About
 
